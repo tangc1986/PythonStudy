@@ -4,6 +4,47 @@ import cPickle
 import wx
 from sketchwindow import SketchWindow
 
+class ControlPanel(wx.Panel):
+
+    BMP_SIZE = 16
+    BMP_BORDER = 3
+    NUM_COLS = 4
+    SPACING = 4
+
+    colorList = ('Black', 'Yellow', 'Red', 'Green', 'Blue', 'Purple',
+                 'Brown', 'Aquamarine', 'Forest Green', 'Light Blue',
+                 'Goldenrod', 'Cyan', 'Orange', 'Navy', 'Dark Grey',
+                 'Light Grey')
+    maxThickness = 16
+
+    def __init__(self, parent, ID, sketch):
+        wx.Panel.__init__(self, parent, ID, style=wx.RAISED_BORDER)
+        self.sketch = sketch
+        buttonSize = (self.BMP_SIZE + 2*self.BMP_BORDER, self.BMP_SIZE + 2*self.BMP_BORDER)
+        colorGrid = self.createColorGrid(parent, buttonSize)
+        thicknessGrid = self.createThicknessGrid(buttonSize)
+        self.layout(colorGrid, thicknessGrid)
+
+    def createColorGrid(self, parent, buttonSize):  #1 创建颜色网络
+        self.colorMap = {}
+        self.colorButtons = {}
+        colorGrid = wx.GridSize(cols=self.NUM_COLS, hgap=2, vgap=2)
+        for eachColor in self.colorList:
+            bmp = parent.MakeBitmap(eachColor)
+            b = buttons.GenBitmapToggleButton(self, -1, bmp, size=buttonSize)
+            b.SetBezelWidth(1)
+            b.SetUseFocusIndicator(False)
+            self.Bind(wx.EVT_BUTTON, self.OnSetColour, b)
+            colorGrid.Add(b, 0)
+            self.colorMap[b.GetId()] = eachColor
+            self.colorButtons[eachColor] = b
+        self.colorButtons[self.colorList[0]].SetToggle(True)
+        return colorGrid
+
+
+
+
+
 class SketchFrame(wx.Frame):
     def __init__(self, parent):
         self.title = "Sketch Frame"
@@ -15,6 +56,14 @@ class SketchFrame(wx.Frame):
         self.initStatusBar()    #1 这里因重构有点变化
         self.createMenuBar()
         #self.createToolBar()
+        self.createPanel()
+
+    def createPanel(self):
+        controlPanel = ControlPanel(self, -1, self.sketch)
+        box = wx.BoxSizer(wx.HORIZONTAL)
+        box.Add(controlPanel, 0, wx.EXPAND)
+        box.Add(self.sketch, 1, wx.EXPAND)
+        self.SetSize(box)
 
     def SaveFile(self):     #1 保存文件
         if self.filename:
@@ -87,9 +136,17 @@ class SketchFrame(wx.Frame):
                            ("&Color", (("&Black", "", self.OnColor, wx.ITEM_RADIO),
                                        ("&Red", "", self.OnColor, wx.ITEM_RADIO),
                                        ("&Green", "", self.OnColor, wx.ITEM_RADIO),
-                                       ("&Blue", "", self.OnColor, wx.ITEM_RADIO))),
+                                       ("&Blue", "", self.OnColor, wx.ITEM_RADIO),
+                                       ("&Other...", "", self.OnOtherColor, wx.ITEM_RADIO))),
                            ("", "", ""),
                            ("&Quit", "Quit", self.OnCloseWindow)))]
+
+    def OnOtherColor(self, event):
+        dlg = wx.ColourDialog(self)
+        dlg.GetColourData().SetChooseFull(True)     # 创建颜色数据对象
+        if dlg.ShowModal() == wx.ID_OK:
+            self.sketch.SetColor(dlg.GetColourData().GetColour())   # 根据用户的输入设置颜色
+        dlg.Destroy()
 
     def createMenuBar(self):
         menuBar = wx.MenuBar()
@@ -138,4 +195,3 @@ if __name__ == '__main__':
     frame = SketchFrame(None)
     frame.Show()
     app.MainLoop()
-    
