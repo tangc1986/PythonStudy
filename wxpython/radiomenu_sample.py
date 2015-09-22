@@ -1,15 +1,69 @@
 #-*- coding: UTF-8 -*-
+import os
+import cPickle
 import wx
 from sketchwindow import SketchWindow
 
 class SketchFrame(wx.Frame):
     def __init__(self, parent):
-        wx.Frame.__init__(self, parent, -1, "Sketch Frame",
+        self.title = "Sketch Frame"
+        wx.Frame.__init__(self, parent, -1, self.title,
                           size=(800, 600))
+        self.filename = ""
         self.sketch = SketchWindow(self, -1)
         self.sketch.Bind(wx.EVT_MOTION, self.OnSketchMotion)
         self.initStatusBar()    #1 这里因重构有点变化
         self.createMenuBar()
+        #self.createToolBar()
+
+    def SaveFile(self):     #1 保存文件
+        if self.filename:
+            data = self.sketch.GetLinesData()
+            f = open(self.filename, 'w')
+            cPickle.dump(data, f)
+            f.close()
+
+    def ReadFile(self):     #2 读文件
+        if self.filename:
+            try:
+                f = open(self.filename, 'r')
+                data = cPickle.load(f)
+                f.close()
+                self.sketch.SetLinesData(data)
+            except cPickle.UnpicklingError:
+                wx.MessageBox("%s is not a sketch file."%self.filename, "oops!", style=wx.OK|wx.ICON_EXCLAMATION)
+
+    wildcard = "Sketch files (*.sketch)|*.sketch|All files (*.*)|*.*"
+
+    def OnOpen(self, event):    #3 弹出打开对话框
+        dlg = wx.FileDialog(self, "Open sketch file...",
+                            os.getcwd(), style=wx.OPEN,
+                            wildcard=self.wildcard)
+        if dlg.ShowModal() == wx.ID_OK:
+            self.filename = dlg.GetPath()
+            self.ReadFile()
+            self.SetTitle(self.title+'--'+self.filename)
+        dlg.Destroy()
+
+    def OnSave(self, event):    #4 保存文件
+        if not self.filename:
+            self.OnSaveAs(event)
+        else:
+            self.SaveFile()
+
+    def OnSaveAs(self, event):  #5 弹出保存对话框
+        dlg = wx.FileDialog(self, "Save sketch as...",
+                            os.getcwd(),
+                            style=wx.SAVE|wx.OVERWRITE_PROMPT,
+                            wildcard=self.wildcard)
+        if dlg.ShowModal() == wx.ID_OK:
+            filename = dlg.GetPath()
+            if not os.path.splitext(filename)[1]:   #6 确保文件后缀名
+                filename = filename + '.sketch'
+            self.filename = filename
+            self.SaveFile()
+            self.SetTitle(self.title+'--'+self.filename)
+        dlg.Destroy()
 
     def initStatusBar(self):
         self.statusbar = self.CreateStatusBar()
@@ -66,8 +120,8 @@ class SketchFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, handler, menuItem)
 
     def OnNew(self, event): pass
-    def OnOpen(self, event): pass
-    def OnSave(self, event): pass
+    #def OnOpen(self, event): pass
+    #def OnSave(self, event): pass
 
     def OnColor(self, event):   #5 处理颜色的改变
         menubar = self.GetMenuBar()
