@@ -2,7 +2,47 @@
 import os
 import cPickle
 import wx
+import wx.html
 from sketchwindow import SketchWindow
+from wx.lib import buttons
+
+class SketchAbout(wx.Dialog):
+    text = '''
+<html>
+<body bgcolor="#ACAA60">
+<center><table bgcolor="#455481" width="100%" cellspacing="0"
+cellpadding="0" border="1">
+<tr>
+    <td align="center"><h1>Sketch!</h1></td>
+</tr>
+</table>
+</center>
+<p><b>Sketch</b> is a demonstration program for <b>wxPython In Action</b>
+Chapter 7.  It is based on the SuperDoodle demo included with wxPython,
+available at http://www.wxpython.org/
+</p>
+
+<p><b>SuperDoodle</b> and <b>wxPython</b> are brought to you by
+<b>Robin Dunn</b> and <b>Total Control Software</b>, Copyright
+&copy; 1997-2006.</p>
+</body>
+</html>
+'''
+
+    def __init__(self, parent):
+        wx.Dialog.__init__(self, parent, -1, 'About Sketch',
+                           size=(440, 400))
+
+        html = wx.html.HtmlWindow(self)
+        html.SetPage(self.text)
+        button = wx.Button(self, wx.ID_OK, "Okay")
+
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(html, 1, wx.EXPAND|wx.ALL, 5)
+        sizer.Add(button, 0, wx.ALIGN_CENTER|wx.ALL, 5)
+
+        self.SetSizer(sizer)
+        self.Layout()
 
 class ControlPanel(wx.Panel):
 
@@ -28,7 +68,7 @@ class ControlPanel(wx.Panel):
     def createColorGrid(self, parent, buttonSize):  #1 创建颜色网络
         self.colorMap = {}
         self.colorButtons = {}
-        colorGrid = wx.GridSize(cols=self.NUM_COLS, hgap=2, vgap=2)
+        colorGrid = wx.GridSizer(cols=self.NUM_COLS, hgap=2, vgap=2)
         for eachColor in self.colorList:
             bmp = parent.MakeBitmap(eachColor)
             b = buttons.GenBitmapToggleButton(self, -1, bmp, size=buttonSize)
@@ -41,9 +81,39 @@ class ControlPanel(wx.Panel):
         self.colorButtons[self.colorList[0]].SetToggle(True)
         return colorGrid
 
+    def createThicknessGrid(self, buttonSize):   #2 创建线条粗细网络
+        self.thicknessIdMap = {}
+        self.thicknessButtons = {}
+        thicknessGrid = wx.GridSizer(cols=self.NUM_COLS, hgap=2, vgap=2)
+        for x in range(1, self.maxThickness+1):
+            b = buttons.GenToggleButton(self, -1, str(x), size=buttonSize)
+            b.SetBezelWidth(1)
+            b.SetUseFocusIndicator(False)
+            self.Bind(wx.EVT_BUTTON, self.OnSetThickness, b)
+            thicknessGrid.Add(b, 0)
+            self.thicknessIdMap[b.GetId()] = x
+            self.thicknessButtons[x] = b
+        self.thicknessButtons[1].SetToggle(True)
+        return thicknessGrid
 
+    def layout(self, colorGrid, thicknessGrid):     #3 合并网格
+        box = wx.BoxSizer(wx.VERTICAL)
+        box.Add(colorGrid, 0, wx.ALL, self.SPACING)
+        box.Add(thicknessGrid, 0, wx.ALL, self.SPACING)
+        self.SetSizer(box)
+        box.Fit(self)
 
+    def OnSetColour(self, event):
+        color = self.colorMap[event.GetId()]
+        if color != self.sketch.color:
+            self.colorButtons[self.sketch.color].SetToggle(False)
+        self.sketch.SetColor(color)
 
+    def OnSetThickness(self, event):
+        thickness = self.thicknessIdMap[event.GetId()]
+        if thickness != self.sketch.thickness:
+            self.thicknessButtons[self.sketch.thickness].SetToggle(False)
+        self.sketch.SetThickness(thickness)
 
 class SketchFrame(wx.Frame):
     def __init__(self, parent):
@@ -63,7 +133,7 @@ class SketchFrame(wx.Frame):
         box = wx.BoxSizer(wx.HORIZONTAL)
         box.Add(controlPanel, 0, wx.EXPAND)
         box.Add(self.sketch, 1, wx.EXPAND)
-        self.SetSize(box)
+        self.SetSizer(box)
 
     def SaveFile(self):     #1 保存文件
         if self.filename:
@@ -139,6 +209,8 @@ class SketchFrame(wx.Frame):
                                        ("&Blue", "", self.OnColor, wx.ITEM_RADIO),
                                        ("&Other...", "", self.OnOtherColor, wx.ITEM_RADIO))),
                            ("", "", ""),
+                           ("&About", "About", self.OnAbout),
+                           ("", "", ""),
                            ("&Quit", "Quit", self.OnCloseWindow)))]
 
     def OnOtherColor(self, event):
@@ -189,9 +261,37 @@ class SketchFrame(wx.Frame):
 
     def OnCloseWindow(self, event):
         self.Destroy()
-        
+
+    def MakeBitmap(self, color):
+        bmp = wx.EmptyBitmap(16, 15)
+        dc = wx.MemoryDC()
+        dc.SelectObject(bmp)
+        dc.SetBackground(wx.Brush(color))
+        dc.Clear()
+        dc.SelectObject(wx.NullBitmap)
+        return bmp
+
+    def OnAbout(self, parent):
+        dlg = SketchAbout(self)
+        dlg.ShowModal()
+        dlg.Destroy()
+
+class SketchApp(wx.App):
+
+    def OnInit(self):
+        bmp = wx.Image("splash.png").ConvertToBitmap()
+        wx.SplashScreen(bmp, wx.SPLASH_CENTER_ON_SCREEN|wx.SPLASH_TIMEOUT,
+                        1000, None, -1)
+        wx.Yield()
+
+        frame = SketchFrame(None)
+        frame.Show()
+        self.SetTopWindow(frame)
+        return True
+
 if __name__ == '__main__':
-    app = wx.PySimpleApp()
-    frame = SketchFrame(None)
-    frame.Show()
+    #app = wx.PySimpleApp()
+    #frame = SketchFrame(None)
+    #frame.Show()
+    app = SketchApp()
     app.MainLoop()
