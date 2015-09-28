@@ -1,53 +1,56 @@
+#!/usr/bin/env python
+# -*- coding:utf-8 -*-
+
 import wx
 import wx.lib.buttons as buttons
 
+
 class GenericButtonFrame(wx.Frame):
+
     def __init__(self):
-        wx.Frame.__init__(self, None, -1, 'Generic Button Example',
-                          size=(500,350))
+        wx.Frame.__init__(self, None, -1, 'Generic Button Example', size=(500, 350))
         panel = wx.Panel(self, -1)
-        
-        sizer = wx.FlexGridSizer(1, 3, 20, 20)
+
+        sizer = wx.FlexGridSizer(10, 3, 20, 20)
         b = wx.Button(panel, -1, "A wx.Button")
         b.SetDefault()
         sizer.Add(b)
-        
+
         b = wx.Button(panel, -1, "non-default wx.Button")
         sizer.Add(b)
-        sizer.Add((10,10))
-        
-        b = buttons.GenButton(panel, -1, 'Genric Button')   # »ù±¾µÄÍ¨ÓÃ°´Å¥
+        sizer.Add((10, 10))
+
+        b = buttons.GenButton(panel, -1, 'Generic Button')   # åŸºæœ¬çš„é€šç”¨æŒ‰é’®
         sizer.Add(b)
-        
-        b = buttons.GenButton(panel, -1, 'disabled Generic')    # ÎŞĞ§µÄÍ¨ÓÃ°´Å¥
+
+        b = buttons.GenButton(panel, -1, 'disabled Generic')    # æ— æ•ˆçš„é€šç”¨æŒ‰é’®
         b.Enable(False)
         sizer.Add(b)
-        
-        b = buttons.GenButton(panel, -1, 'bigger')  # ×Ô¶¨Òå³ß´çºÍÑÕÉ«µÄ°´Å¥
+
+        b = buttons.GenButton(panel, -1, 'bigger')  # è‡ªå®šä¹‰å°ºå¯¸å’Œé¢œè‰²çš„æŒ‰é’®
         b.SetFont(wx.Font(20, wx.SWISS, wx.NORMAL, wx.BOLD, False))
         b.SetBezelWidth(5)
         b.SetBackgroundColour("Navy")
         b.SetForegroundColour("white")
         b.SetToolTipString("This is a BIG button...")
         sizer.Add(b)
-        
+
         bmp = wx.Image("bitmap.bmp", wx.BITMAP_TYPE_BMP).ConvertToBitmap()
-        b = buttons.GenBitmapButton(panel, -1, bmp)     # Í¨ÓÃÎ»Í¼°´Å¥
+        b = buttons.GenBitmapButton(panel, -1, bmp)     # é€šç”¨ä½å›¾æŒ‰é’®
         sizer.Add(b)
-        
-        b = buttons.GenBitmapToggleButton(panel, -1, bmp)   # Í¨ÓÃÎ»Í¼¿ª¹Ø°´Å¥
+
+        b = buttons.GenBitmapToggleButton(panel, -1, bmp)   # é€šç”¨ä½å›¾å¼€å…³æŒ‰é’®
         sizer.Add(b)
-        
-        b = buttons.GenBitmapTextButton(panel, -1, bmp, "Bitmapped Text",
-                                        size=(175,75))  # Î»Í¼ÎÄ±¾°´Å¥
+
+        b = buttons.GenBitmapTextButton(panel, -1, bmp, "Bitmapped Text", size=(175, 75))  # ä½å›¾æ–‡æœ¬æŒ‰é’®
         b.SetUseFocusIndicator(False)
         sizer.Add(b)
-        
-        b = buttons.GenToggleButton(panel, -1, "Toggle Button")   # Í¨ÓÃ¿ª¹Ø°´Å¥
+
+        b = buttons.GenToggleButton(panel, -1, "Toggle Button")   # é€šç”¨å¼€å…³æŒ‰é’®
         sizer.Add(b)
-        
+
         panel.SetSizer(sizer)
-        
+
 if __name__ == '__main__':
     app = wx.PySimpleApp()
     frame = GenericButtonFrame()
