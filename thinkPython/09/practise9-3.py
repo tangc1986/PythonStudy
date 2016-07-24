@@ -16,6 +16,19 @@ def avoid_number(character):
 def has_no_e(word):
     return avoids(word, 'e')
 
-print avoid_number('e')
+#print avoid_number('e')
+
+char_dict = {}
+def init_dict():
+    for i in range(26):
+        char_dict[chr(i+ord('a'))] = 0
+        char_dict[chr(i+ord('A'))] = 0
 
 #TODO
+init_dict()
+fin = open('words.txt')
+for char in char_dict.keys():
+    char_dict[char] = avoid_number(char)
+result_list = sorted(char_dict.iteritems(), key=lambda asd:asd[1], reverse=False)
+for i in range(5):
+    print result_list[i][0],result_list[i][1]
