@@ -1,0 +1,748 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]--><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Needham, MA zip code</title>
+<meta name="description" content="What is the ZIP code for Needham, MA? 02492: Zip Code Lookup Service Including Geographic and Demographic Statistics and Maps, Public School Records, Universities, Medical Institutes, Crime Rates and Weather Information.">
+<meta name="keywords" content="Needham MA zip code, Needham zip code, MA zip codes, Needham us zip, Needham postal codes, Needham postal code, Needham maps, Needham census data, Needham census, Needham weather, Needham housing, Needham schools, Needham public libraries, Needham hospitals, Needham crime rates">
+	<meta name="viewport" content="width=device-width">
+<meta name="google-site-verification" content="07Yy49_ok2XAx7NZbBiWqMi8-6I24MSfUfGaEKxyyz4" />
+<base href="http://www.uszip.com/">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif:400,700,400italic,700italic|Droid+Sans+Mono|Yanone+Kaffeesatz:200,300,400,700|Goudy+Bookletter+1911|Lobster+Two:400,700,400italic,700italic|">
+<link rel="stylesheet" href="root/app_common/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="--><!--/app_common/css/normalize.css">-->
+<link rel="stylesheet" href="root/app_common/css/smoothness/jquery-ui-1.11.3.custom.min.css">
+<link rel="stylesheet" href="root/app_common/css/uzip.css">
+<!--[if lt IE 9]> <link rel="stylesheet" href="root/app_common/css/uzip-ie8.css"> <![endif]-->
+<!--[if lt IE 8]> <link rel="stylesheet" href="root/app_common/css/uzip-ie7.css"> <![endif]-->
+<link rel="stylesheet" href="root/app_common/css/helpers.css">
+<link rel="stylesheet" href="root/app_common/css/media.css">
+<link rel="shortcut icon" type="image/x-icon" href="root/app_common/img/favicon_uzip.ico">
+<link rel="search" type="application/opensearchdescription+xml" title="USZip.com" href="http://www.uszip.com/open-search.xml">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnwrsw6r1n8CqPRhP9AK8la5o6DMLMDl0&sensor=false"></script>
+
+<!--[if lt IE 9]>
+<script src="root/app_common/js/libs/modernizr-2.8.3.custom.min.js"></script>
+<script src="root/app_common/js/libs/html5shiv.min.js"></script>
+<script src="root/app_common/js/libs/respond.min.js"></script>
+<![endif]--><script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-172613-7']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script><meta property="fb:app_id" content="415599681828434"/>
+</head>
+<body id="s4-page-homepage" data-fb="415599681828434" data-atp="ra-4f75bf3d5305fac2">
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=415599681828434&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="page-container">
+<header id="header">
+	<div id="header-int" class="clearfix">
+		<div id="network-header"><span id="network-header-trigger">The&nbsp;STANDS4&nbsp;Network<span class="arw">&#9776;</span></span>
+	<ul id="network-header-links" style="display:none;">
+		<li class="nw-abbreviations"><a href="http://www.abbreviations.com/">ABBREVIATIONS</a></li>
+		<li class="nw-biographies"><a href="http://www.biographies.net/">BIOGRAPHIES</a></li>
+		<li class="nw-convert"><a href="http://www.convert.net/">CONVERSIONS</a></li>
+		<li class="nw-definitions"><a href="http://www.definitions.net/">DEFINITIONS</a></li>
+		<li class="nw-grammar"><a href="http://www.grammar.com/">GRAMMAR</a></li>
+		<li class="nw-lyrics"><a href="http://www.lyrics.net/">LYRICS</a></li>
+		<li class="nw-phrases"><a href="http://www.phrases.net/">PHRASES</a></li>
+		<li class="nw-poetry"><a href="http://www.poetry.net/">POETRY</a></li>
+		<li class="nw-quotes"><a href="http://www.quotes.net/">QUOTES</a></li>
+		<li class="nw-references"><a href="http://www.references.net/">REFERENCES</a></li>
+		<li class="nw-rhymes"><a href="http://www.rhymes.net/">RHYMES</a></li>
+		<li class="nw-scripts"><a href="http://www.scripts.com/">SCRIPTS</a></li>
+		<li class="nw-symbols"><a href="http://www.symbols.com/">SYMBOLS</a></li>
+		<li class="nw-synonyms"><a href="http://www.synonyms.net/">SYNONYMS</a></li>
+		<li class="nw-uszip"><a href="http://www.uszip.com/">USZIP</a></li>
+	</ul>
+</div>	</div>
+</header><div id="main" role="main" class="container">
+<div id="content-top" class="content-top">
+	<div class="view-desktop hidden-xs">
+		<form id="search-frm" method="get" action="subserp.php">
+<input type="hidden" id="page-word-search-op1" name="qtype" value="1">
+<div id="page-top-search" class="rc5">
+	<div id="page-word-search">
+		<input type="text" id="page-word-search-query" class="rc5" name="st" value="02492" placeholder="Search for zipcode or place name..." autocomplete="off">
+		<div id="page-word-search-icon"></div>
+		<button type="submit" class="btn primary" id="page-word-search-button">Search</button>
+	</div>
+</div>
+<div id="page-letter-search" class="rc5"></div>
+</form>		<div id="page-top-logo" onclick="location.href='http://www.uszip.com/';"><img src="root/app_common/img/top_logo_zip.png" alt="USZip.com" title="USZip.com"></div>
+	</div>
+	<div class="view-mobile visible-xs">
+		<form id="search-frm" method="get" action="subserp.php">
+	<input type="hidden" id="page-word-search-op1" name="qtype" value="1">
+	<div id="page-top-search" class="rc5">
+		<div id="page-word-search">
+			<input type="text" id="page-word-search-query" class="rc5" name="st" value="02492" autocomplete="off">
+			<div id="page-word-search-icon"></div>
+			<button type="submit" class="btn primary" id="page-word-search-button">Search</button>
+		</div>
+	</div>
+	<div id="page-letter-search" class="rc5"></div>
+</form>		<div id="page-top-logo" onclick="location.href='http://www.uszip.com/';"><img src="root/app_common/img/top_logo_zip.png" alt="USZip.com" title="USZip.com"></div>
+	</div>
+</div>
+<div class="row">
+
+	<div id="content-main" class="col-sm-8 col-sm-push-4">
+
+		<div class="siteprop clearfix">
+			<hgroup>
+				<div style="position:absolute;float:right;top:12px;right:35px">	<div class="fb-like" data-href="" data-width="" data-height="" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div></div><div style="position:absolute;float:right;top:14px;right:90px">	<div class="g-plusone" data-size="medium"></div>		<script type="text/javascript">		   window.___gcfg = {lang: 'en-GB'};		  (function() {		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;		    po.src = 'https://apis.google.com/js/platform.js';		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);		  })();		</script></div>
+				<h1>Welcome to USZip.com</h1>
+			</hgroup>
+			<div class="siteprop-int clearfix">
+				<div>
+					<p><strong>USZip.com</strong> USZip.com is an instant ZIP code lookup service featuring geographic and demographic data, crime rates, business information, educational institutes, weather and maps that can be explored by ZIP code or city name.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="content-body" class="row">
+
+			<div class="col-xs-12 col-sm-12">
+
+				<div class="row">
+					<div class="adunit-middle adunit-middle-2col clearfix">
+						<div class="hidden-xs col-xs-12 col-sm-6"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ZIP_NEW_TRANS_300_250 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-6071864913982699"
+     data-ad-slot="5101701771"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+						<div class="col-xs-12 col-sm-6"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ZIP_NEW_IMG_300_250 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-6071864913982699"
+     data-ad-slot="4524844468"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+					</div>
+				</div>
+
+				
+					<div class="zip-data clearfix">
+
+						<!-- place name / title -->
+
+													<hgroup>
+								<div style="position:relative;float:right;top:2px;right:-3px">	<div class="fb-like" data-href="" data-width="" data-height="" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div></div><div style="position:relative;float:right;top:4px;right:-25px">	<div class="g-plusone" data-size="medium"></div>		<script type="text/javascript">		   window.___gcfg = {lang: 'en-GB'};		  (function() {		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;		    po.src = 'https://apis.google.com/js/platform.js';		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);		  })();		</script></div>								<h3><strong>02492</strong> is the zip code for</h3>
+								<h2><strong>Needham, <a href="state.php?state=MA">MA</a></strong></h2>
+							</hgroup>
+						
+
+						<!-- geographic data / map -->
+
+													<dl class="zip-stats zip-stats-left"><dt class="fw">Also in this location:</dt><dt class="l2 fw"><strong>Wellesley, <a href="state.php?state=MA">MA</a></strong></dt><hr><dt>Total population</dt><dd>19,931<span class="trend trend-up" title="+14 (+0.07% since 2000)">&#9650;</span></dd><dt>Housing units</dt><dd>7,382<span class="trend trend-up" title="+89 (+1.21% since 2000)">&#9650;</span></dd><dt>Land area<br><span class="stype">(sq. miles)</span></dt><dd>9.53</dd><dt>Density<br><span class="stype">(people per sq. mile)</span></dt><dd>2,091.40<span class="trend trend-up" title="+1 (+0.07% since 2000)">&#9650;</span></dd><dt>Water area<br><span class="stype">(sq. miles)</span></dt><dd>0.35</dd></dl>
+							<div id="zip-place-map-ext" class="stats-chart-ext stats-chart-right">
+																	<div id="zip-place-map" class="stats-chart" data-lat="42.276029" data-long="-71.244543" data-zoom="14"></div>
+															</div>
+											</div>
+
+					
+						<div>
+							<hgroup class="stats-sechead">
+								<h2>Demographic data for zip code <strong>02492</strong></h2>
+							</hgroup>
+
+						</div>
+
+						<!-- gender -->
+
+						
+						<div class="zip-data clearfix">
+							<dl class="zip-stats zip-stats-left"><h3>Gender:</h3><dt>Male</dt><dd>9,595<span class="trend trend-up" title="+114 (+1.19% since 2000)">&#9650;</span></dd><dt>Female</dt><dd>10,336<span class="trend trend-down" title="-100 (-0.97% since 2000)">&#9660;</span></dd><dt style="margin-top:20px;"><strong>Median age</strong></dt><dt class="l2">Male</dt><dd>41.70</dd><dt class="l2">Female</dt><dd>44.60</dd></dl>
+							<div class="stats-chart-ext stats-chart-right">
+								<div id="zip-demog-gender" class="stats-chart" data-chart='{"male":[9595,9481],"female":[10336,10436]}'></div>
+								<div class="stats-chart-label">Gender</div>
+							</div>
+						</div>
+
+						<!-- households / housing units -->
+
+						<div class="zip-data clearfix">
+														<div class="zip-data-grp clearfix">
+								<dl class="zip-stats zip-stats-left"><h3>Households:</h3><dt><strong>Total households</strong></dt><dd>7,045<span class="trend trend-down" title="-122 (-1.73% since 2000)">&#9660;</span></dd><dt class="l2">Family households</dt><dd>5,417<span class="trend trend-up" title="+26 (+0.48% since 2000)">&#9650;</span></dd><dt class="l2">Nonfamily households</dt><dd>1,628<span class="trend trend-down" title="-148 (-9.09% since 2000)">&#9660;</span></dd><dt><strong>Average household size</strong></dt><dd>2.75<span class="trend trend-up" title="+0 (+2.18% since 2000)">&#9650;</span></dd><dt><strong>Average family size</strong></dt><dd>3.21<span class="trend trend-up" title="+0 (+0.93% since 2000)">&#9650;</span></dd></dl>
+								<div class="stats-chart-ext stats-chart-right">
+									<div id="zip-demog-households" class="stats-chart" data-chart='{"family":[5417,5391],"nonfamily":[1628,1776]}'></div>
+									<div class="stats-chart-label">Households</div>
+								</div>
+							</div>
+														<div class="zip-data-grp clearfix">
+								<dl class="zip-stats zip-stats-left"><h3>Housing units:</h3><dt><strong>Total housing units</strong></dt><dd>7,382<span class="trend trend-up" title="+89 (+1.21% since 2000)">&#9650;</span></dd><dt class="l2"><strong>Occupied housing units</strong></dt><dd>7,045<span class="trend trend-down" title="-122 (-1.73% since 2000)">&#9660;</span></dd><dt class="l3">Owner-occupied</dt><dd>6,166<span class="trend trend-up" title="+104 (+1.69% since 2000)">&#9650;</span></dd><dt class="l3">Renter-occupied</dt><dd>879<span class="trend trend-down" title="-226 (-25.71% since 2000)">&#9660;</span></dd><dt class="l2"><strong>Vacant housing units</strong></dt><dd>337<span class="trend trend-up" title="+211 (+62.61% since 2000)">&#9650;</span></dd></dl>
+								<div class="stats-chart-ext stats-chart-right">
+									<div id="zip-demog-housing-units" class="stats-chart" data-chart='{"owner":[6166,6062],"renter":[879,1105],"vacant":[337,126]}'></div>
+									<div class="stats-chart-label">Housing units</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- age -->
+
+						
+						<div class="zip-data clearfix">
+							<dl class="zip-stats zip-stats-left"><h3>Age:</h3><dt>Under 5 years</dt><dd>1,246<span class="trend trend-down" title="-245 (-19.66% since 2000)">&#9660;</span></dd><dt>5 to 9 years</dt><dd>1,746<span class="trend trend-up" title="+218 (+12.49% since 2000)">&#9650;</span></dd><dt>10 to 14 years</dt><dd>1,802<span class="trend trend-up" title="+238 (+13.21% since 2000)">&#9650;</span></dd><dt>15 to 19 years</dt><dd>1,356<span class="trend trend-up" title="+64 (+4.72% since 2000)">&#9650;</span></dd><dt>20 to 24 years</dt><dd>702<span class="trend trend-down" title="-24 (-3.42% since 2000)">&#9660;</span></dd><dt>25 to 34 years</dt><dd>967<span class="trend trend-down" title="-563 (-58.22% since 2000)">&#9660;</span></dd><dt>35 to 44 years</dt><dd>2,732<span class="trend trend-down" title="-585 (-21.41% since 2000)">&#9660;</span></dd><dt>45 to 54 years</dt><dd>3,405<span class="trend trend-up" title="+197 (+5.79% since 2000)">&#9650;</span></dd><dt>55 to 59 years</dt><dd>1,423<span class="trend trend-up" title="+368 (+25.86% since 2000)">&#9650;</span></dd><dt>60 to 64 years</dt><dd>1,295<span class="trend trend-up" title="+495 (+38.22% since 2000)">&#9650;</span></dd><dt>65 to 74 years</dt><dd>1,451<span class="trend trend-down" title="-81 (-5.58% since 2000)">&#9660;</span></dd><dt>75 to 84 years</dt><dd>1,113<span class="trend trend-down" title="-100 (-8.98% since 2000)">&#9660;</span></dd><dt>85 years and over</dt><dd>693<span class="trend trend-up" title="+32 (+4.62% since 2000)">&#9650;</span></dd><dt><strong>Median age</strong></dt><dd>43.20<span class="trend trend-up" title="+3 (+6.02% since 2000)">&#9650;</span></dd></dl>
+							<div class="stats-chart-ext stats-chart-right">
+								<div id="zip-demog-age" class="stats-chart" data-chart='[{"label":"0-5","2010":1246,"2000":1491},{"label":"5-9","2010":1746,"2000":1528},{"label":"10-14","2010":1802,"2000":1564},{"label":"15-19","2010":1356,"2000":1292},{"label":"20-24","2010":702,"2000":726},{"label":"25-34","2010":967,"2000":1530},{"label":"35-44","2010":2732,"2000":3317},{"label":"45-54","2010":3405,"2000":3208},{"label":"55-59","2010":1423,"2000":1055},{"label":"60-64","2010":1295,"2000":800},{"label":"65-74","2010":1451,"2000":1532},{"label":"75-84","2010":1113,"2000":1213},{"label":"85+","2010":693,"2000":661}]'></div>
+								<div class="stats-chart-label">Age</div>
+							</div>
+						</div>
+
+						<!-- race -->
+
+						
+						<div class="zip-data clearfix">
+							<dl class="zip-stats zip-stats-left"><h3>Race:</h3><dt>White</dt><dd>17,992</dd><dt>Hispanic or Latino</dt><dd>420</dd><dt>Black or African American</dt><dd>174</dd><dt>Asian</dt><dd>1,034</dd><dt>American Indian &amp; Alaska Native</dt><dd>8</dd><dt>Native Hawaiian &amp; Other Pacific Islander</dt><dd>2</dd><dt>Other (One Race)</dt><dd>28</dd><dt>Two or More Races</dt><dd>273</dd></dl>
+							<div class="stats-chart-ext stats-chart-right">
+								<div id="zip-demog-race" class="stats-chart" data-chart='[{"label":"White","2010":17992},{"label":"Hispanic \/ Latino","2010":420},{"label":"Black \/ African American","2010":174},{"label":"Asian","2010":1034},{"label":"American Indian &amp; Alaska Native","2010":8},{"label":"Native Hawaiian &amp; Other Pacific Islander","2010":2},{"label":"Other (One Race)","2010":28},{"label":"Two or More Races","2010":273}]'></div>
+								<div class="stats-chart-label">Race</div>
+							</div>
+						</div>
+
+						<div class="zip-data-comment clearfix">* Based on 2010, 2000 U.S. Census data</div>
+
+					
+					
+						<div>
+							<hgroup class="stats-sechead">
+								<h2>Economic data for zip code <strong>02492</strong></h2>
+							</hgroup>
+						</div>
+
+						<!-- employment status -->
+
+						
+						<div class="zip-data clearfix">
+							<div class="zip-data-grp clearfix">
+								<dl class="zip-stats zip-stats-left"><h3>Employment status:</h3><dt><strong>Population</strong><br><span class="stype">(16 years and over)</span></dt><dd>15,076</dd><dt><strong>Civilian labor force</strong></dt><dd>9,657</dd><dt class="l2">Employed</dt><dd>9,268</dd><dt class="l2">Unemployed</dt><dd>389</dd><dt><strong>Armed Forces</strong></dt><dd>4</dd><dt>Not in labor force</dt><dd>5,415</dd><dt><strong>Percent Unemployed</strong></dt><dd>4.0%</dd></dl>
+								<div class="stats-chart-ext stats-chart-right">
+									<div id="zip-econ-employment" class="stats-chart" data-chart='[{"label":"Employed","n":9268},{"label":"Unemployed","n":389},{"label":"Armed Forces","n":4}]'></div>
+									<div class="stats-chart-label">Employment status</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- commute -->
+
+						
+						<div class="zip-data clearfix">
+							<div class="zip-data-grp clearfix">
+								<dl class="zip-stats zip-stats-left"><h3>Commuting to work:</h3><dt><strong>Workers</strong><br><span class="stype">(16 years and over)</span></dt><dd>9,082</dd><dt><strong>Car, truck, or van</strong></dt><dt class="l2">Drove alone</dt><dd>6,600</dd><dt class="l2">Carpooled</dt><dd>397</dd><dt><strong>Public transportation</strong><br><span class="stype">(excluding taxicab)</span></dt><dd>936</dd><dt><strong>Walked</strong></dt><dd>415</dd><dt><strong>Other means</strong></dt><dd>76</dd><dt><strong>Worked at home</strong></dt><dd>658</dd><dt><strong>Mean travel time</strong></dt><dd>28.5 min.</dd></dl>
+								<div class="stats-chart-ext stats-chart-right">
+									<div id="zip-econ-commute" class="stats-chart" data-chart='[{"label":"Drove alone","n":6600},{"label":"Carpooled","n":397},{"label":"Public transportation","n":936},{"label":"Walked","n":415},{"label":"Other means","n":76},{"label":"Worked at home","n":658}]'></div>
+									<div class="stats-chart-label">Commuting to work</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- occupation -->
+
+						
+						<div class="zip-data clearfix">
+							<div class="zip-data-grp clearfix">
+								<dl class="zip-stats zip-stats-left"><h3>Occupation:</h3><dt><strong>Civilian employed population</strong><br><span class="stype">(16 years and over)</span></dt><dd>9,268</dd><dt>Management / business / science / arts</dt><dd>6,261</dd><dt>Service</dt><dd>841</dd><dt>Sales / office</dt><dd>1,770</dd><dt>Natural resources / construction / maintenance</dt><dd>216</dd><dt>Production / transportation / material moving</dt><dd>180</dd></dl>
+								<div class="stats-chart-ext stats-chart-right">
+									<div id="zip-econ-occupation" class="stats-chart" data-chart='[{"label":"Management \/ business \/ science \/ arts","n":6261},{"label":"Service","n":841},{"label":"Sales \/ office","n":1770},{"label":"Natural resources \/ construction \/ maintenance","n":216},{"label":"Production \/ transportation \/ material moving","n":180}]'></div>
+									<div class="stats-chart-label">Occupation</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- industry -->
+
+						
+						<div class="zip-data clearfix">
+							<div class="zip-data-grp clearfix">
+								<dl class="zip-stats zip-stats-left"><h3>Industry:</h3><dt><strong>Civilian employed population</strong><br><span class="stype">(16 years and over)</span></dt><dd>9,268</dd><dt>Agriculture / forestry / fishing / hunting / mining</dt><dd>65</dd><dt>Construction</dt><dd>138</dd><dt>Manufacturing</dt><dd>558</dd><dt>Wholesale trade</dt><dd>248</dd><dt>Retail trade</dt><dd>539</dd><dt>Transportation / warehousing / utilities</dt><dd>207</dd><dt>Information</dt><dd>228</dd><dt>Finance / insurance / real estate / rental / leasing</dt><dd>1,261</dd><dt>Professional / scientific / management / administrative / waste management services</dt><dd>1,899</dd><dt>Educational services / health care / social assistance</dt><dd>3,268</dd><dt>Arts / entertainment / recreation / accommodation / food services</dt><dd>420</dd><dt>Public administration</dt><dd>160</dd><dt>Other services</dt><dd>277</dd></dl>
+								<div class="stats-chart-ext stats-chart-right">
+									<div id="zip-econ-industry" class="stats-chart" data-chart='[{"label":"Agriculture \/ forestry \/ fishing \/ hunting \/ mining","n":65},{"label":"Construction","n":138},{"label":"Manufacturing","n":558},{"label":"Wholesale trade","n":248},{"label":"Retail trade","n":539},{"label":"Transportation \/ warehousing \/ utilities","n":207},{"label":"Information","n":228},{"label":"Finance \/ insurance \/ real estate \/ rental \/ leasing","n":1261},{"label":"Professional \/ scientific \/ management \/ administrative \/ waste management services","n":1899},{"label":"Educational services \/ health care \/ social assistance","n":3268},{"label":"Arts \/ entertainment \/ recreation \/ accommodation \/ food services","n":420},{"label":"Public administration","n":160},{"label":"Other services","n":277}]'></div>
+									<div class="stats-chart-label">Industry</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- worker class -->
+
+						
+						<div class="zip-data clearfix">
+							<div class="zip-data-grp clearfix">
+								<dl class="zip-stats zip-stats-left"><h3>Class of worker:</h3><dt><strong>Civilian employed population</strong><br><span class="stype">(16 years and over)</span></dt><dd>9,268</dd><dt>Private wage &amp; salary workers</dt><dd>7,529</dd><dt>Government workers</dt><dd>888</dd><dt>Self-employed<br><span class="stype">(in own not incorporated business)</span></dt><dd>851</dd><dt>Unpaid family workers</dt><dd>0</dd></dl>
+								<div class="stats-chart-ext stats-chart-right">
+									<div id="zip-econ-wclass" class="stats-chart" data-chart='[{"label":"Private wage & salary workers","n":7529},{"label":"Government workers","n":888},{"label":"Self-employed","n":851},{"label":"Unpaid family workers","n":0}]'></div>
+									<div class="stats-chart-label">Class of worker</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- income -->
+
+						
+						<div class="zip-data clearfix">
+							<div class="zip-data-grp clearfix">
+								<dl class="zip-stats zip-stats-left"><h3>Income:</h3><dt><strong>Total households</strong></dt><dd>6,961</dd><dt>Less than $10,000</dt><dd>217</dd><dt>$10,000 to $14,999</dt><dd>164</dd><dt>$15,000 to $24,999</dt><dd>309</dd><dt>$25,000 to $34,999</dt><dd>198</dd><dt>$35,000 to $49,999</dt><dd>341</dd><dt>$50,000 to $74,999</dt><dd>763</dd><dt>$75,000 to $99,999</dt><dd>518</dd><dt>$100,000 to $149,999</dt><dd>1,322</dd><dt>$150,000 to $199,999</dt><dd>860</dd><dt>$200,000 or more</dt><dd>2,269</dd><dt style="margin-top:20px;"><strong>Median household income</strong></dt><dd style="margin-top:20px;">$129,769</dd><dt><strong>Mean household income</strong></dt><dd>$182,288</dd><dt style="margin-top:20px;"><strong>Percentage of people whose income in the past 12 months is below the poverty level</strong></dt><dd style="margin-top:20px;">3.4%</dd></dl>
+								<div class="stats-chart-ext stats-chart-right">
+									<div id="zip-econ-income" class="stats-chart" data-chart='[{"label":"Less than $10,000","n":217},{"label":"$10,000 - $14,999","n":164},{"label":"$15,000 - $24,999","n":309},{"label":"$25,000 - $34,999","n":198},{"label":"$35,000 - $49,999","n":341},{"label":"$50,000 - $74,999","n":763},{"label":"$75,000 - $99,999","n":518},{"label":"$100,000 - $149,999","n":1322},{"label":"$150,000 - $199,999","n":860},{"label":"$200,000 or more","n":2269}]'></div>
+									<div class="stats-chart-label">Income</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="zip-data-comment clearfix">* Based on 2007-2011 American Community Survey 5-year estimates</div>
+
+					
+					<!-- schools -->
+
+					
+						<div>
+							<hgroup class="stats-sechead">
+								<h2>Public schools in <strong>02492</strong></h2>
+							</hgroup>
+						</div>
+
+						<div class="zip-data clearfix">
+							<div class="tdata-ext">
+								<table class="tdata"><colgroup><col style="width: 240px;"><col style="width: 120px;"><col style="width: 80px;"><col style="width: 80px;"><col style="width: 80px;"></colgroup><thead><tr><th>Name &amp; Address</th><th>Phone</th><th class="tar"># of students</th><th class="tar">Free lunch</th><th class="tar">Pupils per teacher</th></tr></thead><tbody><tr><td class="tal dx"><strong>Broadmeadow</strong><br>120 Broadmeadow Rd</td><td class="tal dx">(781) 455-0448</td><td class="tar dx">582</td><td class="tar dx">11</td><td class="tar dx">15.7</td></tr><tr><td class="tal dx"><strong>Newman Elem</strong><br>1155 Central Avenue</td><td class="tal dx">(781) 455-0416</td><td class="tar dx">724</td><td class="tar dx">8</td><td class="tar dx">13.7</td></tr><tr><td class="tal dx"><strong>Pollard Middle</strong><br>200 Harris Avenue</td><td class="tal dx">(781) 455-0480</td><td class="tar dx">1,065</td><td class="tar dx">33</td><td class="tar dx">12.8</td></tr><tr><td class="tal dx"><strong>William Mitchell</strong><br>187 Brookline Street</td><td class="tal dx">(781) 455-0466</td><td class="tar dx">432</td><td class="tar dx">10</td><td class="tar dx">16.0</td></tr></tbody></table>							</div>
+						</div>
+
+					
+					<!-- libraries -->
+
+					
+						<div><hgroup class="stats-sechead">
+								<h2>Public libraries around <strong>Needham, MA</strong></h2>
+							</hgroup>
+						</div>
+
+						<div class="zip-data clearfix">
+							<div class="tdata-ext">
+								<table class="tdata"><colgroup><col style="width: 330px;"><col style="width: 270px;"></colgroup><thead><tr><th>Name</th><th>Address</th></tr></thead><tbody><tr><td class="tal dx"><strong>Needham Free Public Library</strong><br><a class="hidden-xs" rel="nofollow" href="http://www.needhamma.gov/Library" target="_blank">www.needhamma.gov</a></td><td class="tal dx">1139 Highland Ave.<br>Needham, MA 02494</td></tr><tr><td class="tal dx"><strong>Weston Public Library</strong><br><a class="hidden-xs" rel="nofollow" href="http://www.WestonLibrary.org" target="_blank">www.WestonLibrary.org</a></td><td class="tal dx">87 School Street<br>Weston, MA 02493</td></tr></tbody></table>							</div>
+						</div>
+
+					
+					<!-- universities -->
+
+					
+						<div>
+							<hgroup class="stats-sechead">
+								<h2>Universities and Colleges around <strong>02492</strong></h2>
+							</hgroup>
+						</div>
+
+						<div class="zip-data clearfix">
+							<div class="tdata-ext">
+								<table class="tdata"><colgroup><col style="width: 280px;"><col style="width: 220px;"><col style="width: 100px;"></colgroup><thead><tr><th>Name</th><th>Address</th><th>Phone</th></tr></thead><tbody><tr><td class="tal dx"><strong>St Sebastian's Country Day School</strong><br><a class="hidden-xs" rel="nofollow" href="http://www.stsebastiansschool.org" target="_blank">www.stsebastiansschool.org</a></td><td class="tal dx">1191 Greendale Avenue<br>Needham, MA 02492</td><td class="tal dx">(781) 449-5200</td></tr><tr><td class="tal dx"><strong>Regis College</strong></td><td class="tal dx">235 Wellesley Street<br>Weston, MA 02493</td><td class="tal dx">(781) 768-7340</td></tr><tr><td class="tal dx"><strong>Boston University - Centers and Institutes- Center for Advanced Biotechnology- Training T</strong></td><td class="tal dx">254 2nd Avenue<br>Needham, MA 02494</td><td class="tal dx">(978) 649-4040</td></tr><tr><td class="tal dx"><strong>Boston College - Administrative Offices- Weston Observatory</strong></td><td class="tal dx">381 Concord Road<br>Weston, MA 02493</td><td class="tal dx">(617) 552-8300</td></tr><tr><td class="tal dx"><strong>Health Promotion Affliates</strong></td><td class="tal dx">661 Highland Avenue<br>Needham Heights, MA 02494</td><td class="tal dx">(781) 449-2233</td></tr><tr><td class="tal dx"><strong>Northeastern University - Henderson House</strong></td><td class="tal dx">99 Westcliff Road<br>Weston, MA 02493</td><td class="tal dx">(781) 235-4350</td></tr></tbody></table>							</div>
+						</div>
+
+					
+					<!-- hospitals -->
+
+					
+						<div>
+							<hgroup class="stats-sechead">
+								<h2>Hospitals and Medical Centers around <strong>02492</strong></h2>
+							</hgroup>
+						</div>
+
+						<div class="zip-data clearfix">
+							<div class="tdata-ext">
+								<table class="tdata"><colgroup><col style="width: 230px;"><col style="width: 210px;"><col style="width: 100px;"><col style="width: 60px;"></colgroup><thead><tr><th>Name</th><th>Address</th><th>Phone</th><th class="tar"># of beds</th></tr></thead><tbody><tr><td class="tal dx"><strong>Bournewood Hospital</strong><br><a class="hidden-xs" rel="nofollow" href="http://www.bournewood.com" target="_blank">www.bournewood.com</a></td><td class="tal dx">300 South Street<br>Brookline, MA 02467</td><td class="tal dx">(617) 469-0300</td><td class="tar dx">75</td></tr><tr><td class="tal dx"><strong>Brockton Va Medical Center</strong><br><a class="hidden-xs" rel="nofollow" href="http://www.va.gov/sta/guide/home.asp" target="_blank">www.va.gov</a></td><td class="tal dx">940 Belmont Street<br>Brockton, MA 02401</td><td class="tal dx">(508) 583-4500</td><td class="tar dx">495</td></tr><tr><td class="tal dx"><strong>Caritas Good Samaritan Med Ctr</strong><br><a class="hidden-xs" rel="nofollow" href="http://www.caritasgoodsam.org" target="_blank">www.caritasgoodsam.org</a></td><td class="tal dx">235 North Pearl Street<br>Brockton, MA 02401</td><td class="tal dx">(508) 427-3000</td><td class="tar dx">185</td></tr><tr><td class="tal dx"><strong>Charles River Hospital</strong></td><td class="tal dx">203 Grove Street<br>Wellesley, MA 02482</td><td class="tal dx">(781) 416-5300</td><td class="tar dx">62</td></tr><tr><td class="tal dx"><strong>Deaconess Waltham Hospital</strong><br><a class="hidden-xs" rel="nofollow" href="http://www.caregroup.org" target="_blank">www.caregroup.org</a></td><td class="tal dx">9 Hope Avenue<br>Waltham, MA 02453</td><td class="tal dx">(781) 647-6000</td><td class="tar dx">218</td></tr><tr><td class="tal dx"><strong>Mclean Hospital</strong><br><a class="hidden-xs" rel="nofollow" href="http://www.mcleanhospital.org" target="_blank">www.mcleanhospital.org</a></td><td class="tal dx">115 Mill Street<br>Belmont, MA 02478</td><td class="tal dx">(617) 855-2000</td><td class="tar dx">160</td></tr><tr><td class="tal dx"><strong>Newton-Wellesley Hospital</strong><br><a class="hidden-xs" rel="nofollow" href="http://www.nwh.org" target="_blank">www.nwh.org</a></td><td class="tal dx">2014 Washington Street<br>Newton Lower Falls, MA 02462</td><td class="tal dx">(617) 243-6000</td><td class="tar dx">240</td></tr><tr><td class="tal dx"><strong>Simpson Infirmary</strong></td><td class="tal dx">106 Central Street<br>Wellesley, MA 02481</td><td class="tal dx">(781) 283-2810</td><td class="tar dx">11</td></tr></tbody></table>							</div>
+						</div>
+
+					
+					<!-- hotels -->
+
+					
+					<!-- hotels -->
+
+					
+						<div>
+							<hgroup class="stats-sechead">
+								<h2>Restaurants, dining rooms and coffee shops in <strong>02492</strong></h2>
+							</hgroup>
+						</div>
+
+						<div class="zip-data clearfix">
+							<div class="tdata-ext">
+								<table class="tdata"><colgroup><col style="width: 230px;"><col style="width: 210px;"><col style="width: 100px;"><col style="width: 100px;"></colgroup><thead><tr><th>Restaurant name</th><th>Address</th><th>Cuisine</th><th>Phone</th></tr></thead><tbody><tr><td class="tal dx"><strong>Center Cafe, The</strong></td><td class="tal dx">1027 Great Plain Ave<br>Needham, MA 02492</td><td class="tal dx">American</td><td class="tal dx">781-455-8800</td></tr><tr><td class="tal dx"><strong>Fava</strong></td><td class="tal dx">1027 Great Plain Ave<br>Needham, MA 02492</td><td class="tal dx">American</td><td class="tal dx">781-455-8668</td></tr><tr><td class="tal dx"><strong>Fuji Steak House</strong></td><td class="tal dx">1430 Highland Ave<br>Needham, MA 02492</td><td class="tal dx">Japanese</td><td class="tal dx">781-726-7658</td></tr><tr><td class="tal dx"><strong>Indigo Bistro</strong></td><td class="tal dx">45 Chapel St<br>Needham, MA 02492</td><td class="tal dx">Mediterranean</td><td class="tal dx">781-453-0002</td></tr><tr><td class="tal dx"><strong>Masala Art</strong></td><td class="tal dx">990 Great Plain Ave<br>Needham, MA 02492</td><td class="tal dx">Indian</td><td class="tal dx">781-449-4050</td></tr><tr><td class="tal dx"><strong>Mom & Pops Pizza</strong></td><td class="tal dx">315 Chestnut St<br>Needham, MA 02492</td><td class="tal dx">Pizza</td><td class="tal dx">781-449-2255</td></tr><tr><td class="tal dx"><strong>Needham House of Pizza</strong></td><td class="tal dx">914 Great Plain Ave<br>Needham, MA 02492</td><td class="tal dx">American, Hamburgers, Pizza, Sandwiches</td><td class="tal dx">781-444-1139</td></tr><tr><td class="tal dx"><strong>Nicholas Pizzeria</strong></td><td class="tal dx">33 Chapel St<br>Needham, MA 02492</td><td class="tal dx">Pizza</td><td class="tal dx">781-449-6303</td></tr><tr><td class="tal dx"><strong>Not Your Average Joe's</strong></td><td class="tal dx">109 Chapel St<br>Needham, MA 02492</td><td class="tal dx">American</td><td class="tal dx">978-453-9300</td></tr><tr><td class="tal dx"><strong>Petit Robert Needham</strong></td><td class="tal dx">45 Chapel Street<br>Needham, MA 02492</td><td class="tal dx">French</td><td class="tal dx">781-559-0532</td></tr><tr><td class="tal dx"><strong>Pho Pasteur</strong></td><td class="tal dx">66 Chestnut St<br>Needham, MA 02492</td><td class="tal dx">Sushi, Vietnamese</td><td class="tal dx">781-444-0272</td></tr><tr><td class="tal dx"><strong>Pizza</strong></td><td class="tal dx">1257 Highland Ave<br>Needham, MA 02492</td><td class="tal dx">Pizza</td><td class="tal dx">781-455-8600</td></tr><tr><td class="tal dx"><strong>Quince Bistro</strong></td><td class="tal dx">1019 Great Plain Ave<br>Needham, MA 02492</td><td class="tal dx">European</td><td class="tal dx">781-449-7046</td></tr><tr><td class="tal dx"><strong>Spiga Italiana</strong></td><td class="tal dx">18 Highland Circle<br>Needham, MA 02492</td><td class="tal dx">Italian</td><td class="tal dx">781-449-5600</td></tr><tr><td class="tal dx"><strong>Sweet Basil</strong></td><td class="tal dx">942 Great Plain Ave<br>Needham, MA 02492</td><td class="tal dx">Italian</td><td class="tal dx">781-444-9600</td></tr></tbody></table>							</div>
+						</div>
+
+					
+					<!-- crime rates -->
+
+					
+					
+						<div>
+							<hgroup class="stats-sechead">
+								<h2>Crime rates</h2>
+							</hgroup>
+						</div>
+
+						<div class="zip-data clearfix">
+
+							
+								<div class="zip-data-grp clearfix">
+									<dl class="zip-stats zip-stats-left"><h3>Crime rates in Needham, MA:</h3><dt><strong>Total</strong></dt><dd>257</dd><dt class="l2"><strong>Violent Crime</strong></dt><dd>6</dd><dt class="l3">Murder &amp; Manslaughter</dt><dd>1</dd><dt class="l3">Forcible Rape</dt><dd>0</dd><dt class="l3">Robbery</dt><dd>1</dd><dt class="l3">Aggravated Assault</dt><dd>4</dd><dt class="l2"><strong>Property Crime</strong></dt><dd>251</dd><dt class="l3">Burglary</dt><dd>33</dd><dt class="l3">Larceny &amp; Theft</dt><dd>215</dd><dt class="l3">Motor Vehicle Theft</dt><dd>3</dd><dt class="l3">Arson</dt><dd>0</dd></dl>
+									<div class="stats-chart-ext stats-chart-right">
+										<div id="zip-demog-crime-0" class="zip-demog-crime stats-chart" data-chart='[["Violent Crime",1,0,1,4,0,0,0,0],["Property Crime",0,0,0,0,33,215,3,0]]'></div>
+										<div class="stats-chart-label">Needham, MA</div>
+									</div>
+								</div>
+
+							
+								<div class="zip-data-grp clearfix">
+									<dl class="zip-stats zip-stats-left"><h3>Crime rates in Wellesley, MA:</h3><dt><strong>Total</strong></dt><dd>256</dd><dt class="l2"><strong>Violent Crime</strong></dt><dd>21</dd><dt class="l3">Murder &amp; Manslaughter</dt><dd>0</dd><dt class="l3">Forcible Rape</dt><dd>1</dd><dt class="l3">Robbery</dt><dd>2</dd><dt class="l3">Aggravated Assault</dt><dd>18</dd><dt class="l2"><strong>Property Crime</strong></dt><dd>235</dd><dt class="l3">Burglary</dt><dd>63</dd><dt class="l3">Larceny &amp; Theft</dt><dd>169</dd><dt class="l3">Motor Vehicle Theft</dt><dd>3</dd><dt class="l3">Arson</dt><dd>0</dd></dl>
+									<div class="stats-chart-ext stats-chart-right">
+										<div id="zip-demog-crime-1" class="zip-demog-crime stats-chart" data-chart='[["Violent Crime",0,1,2,18,0,0,0,0],["Property Crime",0,0,0,0,63,169,3,0]]'></div>
+										<div class="stats-chart-label">Wellesley, MA</div>
+									</div>
+								</div>
+
+							
+						</div>
+
+					
+
+					<section class="translate">
+
+												<h4>Discuss this <a href="http://www.uszip.com/zip/02492">02492 zip code information page</a> with the community:</h4>
+
+						<div class="fb-comments-unloaded" data-href="http://www.uszip.com/zip/02492" data-numposts="5" data-colorscheme="light"></div>
+
+					</section>
+
+					<hr>
+
+					<section id="biblio">
+						<hgroup>
+							<h1>Citation</h1>
+							<h4>Use the citation below to add this <strong>02492</strong> zip code data to your bibliography:</h4>
+						</hgroup>
+						<div class="rc5">
+							<p id="cite-style-select" data-term="02492"><strong>Style:</strong><a href="javascript:void(0);" class="rc3 s" id="cite-style-select-MLA" data-type="MLA">MLA</a><a href="javascript:void(0);" class="rc3" id="cite-style-select-Chicago" data-type="Chicago">Chicago</a><a href="javascript:void(0);" class="rc3" id="cite-style-select-APA" data-type="APA">APA</a></p>
+							<p id="cite-content"><cite>"02492."</cite> <em>USZip.com.</em> STANDS4 LLC, 2016. Web. 29 Aug. 2016. &lt;<a href="http://www.uszip.com/zip/02492" class="force-wrap">http://www.uszip.com/zip/02492</a>&gt;.</p>
+						</div>
+					</section>
+
+
+				
+				<br>
+
+			</div>
+
+		</div>
+	</div>
+	
+	<div id="content-aside" class="col-sm-4 col-sm-pull-8">
+		
+		<div class="hidden-xs">
+    <hr class="sep">
+<div class="tagline">
+	<h2>The Web's Largest Resource for</h2>
+	<h1>ZIP Codes <span>&amp;</span> Places</h1>
+</div>    <div class="nsep"><hr><h3>A Member Of The <span>STANDS4 Network</span></h3></div>
+    <div id="sb-social">
+	<div class="clearfix">
+	<div class="social" title="Share this page on Facebook"><a id="share-facebook" href="javascript:void(0);" target="_blank"><div class="fb"></div></a></div>
+	<div class="social" title="Share this page on Twitter"><a id="share-twitter" href="javascript:void(0);" target="_blank"><div class="tw"></div></a></div>
+	<div class="social" title="Share this page on Google+"><a id="share-googleplus" href="javascript:void(0);" target="_blank"><div class="gp"></div></a></div>
+	<div class="social" title="Share this page with AddThis"><a id="share-addthis" href="javascript:void(0);" target="_blank"><div class="at"></div></a></div>
+	</div>
+</div>    <hr class="sep">
+</div>		
+		<div class="cblocks">
+			
+							
+			<div class="cblock fstate">
+				<hgroup class="clearfix">
+					<h4>State info:</h4>
+					<h3>Massachusetts</h3>
+				</hgroup>
+				<div class="cblock-int clearfix">
+					<h4>Massachusetts, Bay State, Old Colony, MA; a state in New England; one of the original 13 colonies</h4>
+					<div class="about-state-flag"><img src="flags/MA.png"></div>
+					<p>The Commonwealth of Massachusetts is a state located in the New England region of the northeastern United States. It borders Rhode Island and Connecticut to the south, New York to the west, and Vermont and New Hampshire to the north. To the east, it borders the Atlantic Ocean. Most of its population of 6.4 million live in the Boston metropolitan area. The eastern half of this relatively small state is mostly urban and suburban, while Western Massachusetts is mostly rural. Massachusetts is the most populous of the six New England states. It ranks third among U.S. states in overall population density and fourth in GDP per capita.</p>
+					<hr>
+					<h4>Browse by state:</h4>
+					<ul class="clearfix">				
+											<li><a href="state.php?state=AL">Alabama</a></li>
+											<li><a href="state.php?state=AK">Alaska</a></li>
+											<li><a href="state.php?state=AZ">Arizona</a></li>
+											<li><a href="state.php?state=AR">Arkansas</a></li>
+											<li><a href="state.php?state=CA">California</a></li>
+											<li><a href="state.php?state=CO">Colorado</a></li>
+											<li><a href="state.php?state=CT">Connecticut</a></li>
+											<li><a href="state.php?state=DE">Delaware</a></li>
+											<li><a href="state.php?state=FL">Florida</a></li>
+											<li><a href="state.php?state=GA">Georgia</a></li>
+											<li><a href="state.php?state=HI">Hawaii</a></li>
+											<li><a href="state.php?state=ID">Idaho</a></li>
+											<li><a href="state.php?state=IL">Illinois</a></li>
+											<li><a href="state.php?state=IN">Indiana</a></li>
+											<li><a href="state.php?state=IA">Iowa</a></li>
+											<li><a href="state.php?state=KS">Kansas</a></li>
+											<li><a href="state.php?state=KY">Kentucky</a></li>
+											<li><a href="state.php?state=LA">Louisiana</a></li>
+											<li><a href="state.php?state=ME">Maine</a></li>
+											<li><a href="state.php?state=MD">Maryland</a></li>
+											<li><a href="state.php?state=MA">Massachusetts</a></li>
+											<li><a href="state.php?state=MI">Michigan</a></li>
+											<li><a href="state.php?state=MN">Minnesota</a></li>
+											<li><a href="state.php?state=MS">Mississippi</a></li>
+											<li><a href="state.php?state=MO">Missouri</a></li>
+											<li><a href="state.php?state=MT">Montana</a></li>
+											<li><a href="state.php?state=NE">Nebraska</a></li>
+											<li><a href="state.php?state=NV">Nevada</a></li>
+											<li><a href="state.php?state=NH">New Hampshire</a></li>
+											<li><a href="state.php?state=NJ">New Jersey</a></li>
+											<li><a href="state.php?state=NM">New Mexico</a></li>
+											<li><a href="state.php?state=NY">New York</a></li>
+											<li><a href="state.php?state=NC">North Carolina</a></li>
+											<li><a href="state.php?state=ND">North Dakota</a></li>
+											<li><a href="state.php?state=OH">Ohio</a></li>
+											<li><a href="state.php?state=OK">Oklahoma</a></li>
+											<li><a href="state.php?state=OR">Oregon</a></li>
+											<li><a href="state.php?state=PA">Pennsylvania</a></li>
+											<li><a href="state.php?state=PR">Puerto Rico</a></li>
+											<li><a href="state.php?state=RI">Rhode Island</a></li>
+											<li><a href="state.php?state=SC">South Carolina</a></li>
+											<li><a href="state.php?state=SD">South Dakota</a></li>
+											<li><a href="state.php?state=TN">Tennessee</a></li>
+											<li><a href="state.php?state=TX">Texas</a></li>
+											<li><a href="state.php?state=UT">Utah</a></li>
+											<li><a href="state.php?state=VT">Vermont</a></li>
+											<li><a href="state.php?state=VA">Virginia</a></li>
+											<li><a href="state.php?state=WA">Washington</a></li>
+											<li><a href="state.php?state=DC">Washington, D.C.</a></li>
+											<li><a href="state.php?state=WV">West Virginia</a></li>
+											<li><a href="state.php?state=WI">Wisconsin</a></li>
+											<li><a href="state.php?state=WY">Wyoming</a></li>
+										</ul>
+				</div>
+			</div>
+			
+						
+						
+						
+			<div class="cblock fstate">
+				<hgroup class="clearfix">
+					<h4>Top 5 Baby Names in:</h4>
+					<h3>Massachusetts</h3>
+				</hgroup>
+				<div class="cblock-int clearfix">
+					<p><strong>Female</strong></p>
+					Emma &bull;  Sophia &bull;  Olivia &bull;  Isabella &bull;  Ava					<p><strong>Male</strong></p>
+					Benjamin &bull;  Mason &bull;  Ryan &bull;  William &bull;  Jacob					<p>
+				</div>
+			</div>
+			
+						
+		</div>
+		
+		<section><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ZIP_NEW_TRANS_300_600 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6071864913982699"
+     data-ad-slot="2842971144"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></section>
+<section><script type="text/javascript"><!--
+	e9 = new Object();
+    e9.size = "300x250";
+//--></script>
+<script type="text/javascript" src="http://tags.expo9.exponential.com/tags/Definitionsnet/ROS/tags.js"></script></section>
+<section><script type="text/javascript">var vclk_options = {sid:9374,media_id:6,media_type:8,version:"1.4"};</script><script class="vclk_pub_code" type="text/javascript" src="http://cdn.fastclick.net/js/adcodes/pubcode.min.js?sid=9374&media_id=6&media_type=8&version=1.4&exc=1"></script><noscript><a href="http://media.fastclick.net/w/click.here?sid=9374&m=6&c=1" target="_blank"><img src="http://media.fastclick.net/w/get.media?sid=9374&m=6&tp=8&d=s&c=1&vcm_acv=1.4" width="300" height="250" border="1"></a></noscript></section>
+<section><!-- Async Tag // Tag for network 9533: Marketplace: STANDS4 LLC // Website: STANDS4 Network // Page: Stands4 Network - Smaller sites // Placement: Stands4 Network 300x250 ATF (3219708) // created at: Dec 8, 2014 8:39:43 AM -->
+<script type="text/javascript" src="http://aka-cdn-ns.adtechus.com/dt/common/DAC.js"></script>
+<div id="3219708"></div>
+<script>
+ADTECH.config.page = { protocol: 'http', server: 'adserver.adtechus.com', network: '9533.1', pageid: 693161, params: { loc: '100' }};
+ADTECH.config.placements[3219708] = { sizeid: 170, params: { alias: '', target: '_blank' }};
+ADTECH.loadAd(3219708);
+</script></section>
+<section><script type="text/javascript" src="http://ap.lijit.com///www/delivery/fpi.js#?z=181260&u=stands4&width=300&height=250"></script></section>
+
+
+		
+	</div>
+	
+</div>
+
+</div>
+<footer id="footer">
+	<div id="footer-int" class="clearfix container-fluid">
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-3">
+				<div class="row">
+					<div class="col-xs-6 col-sm-5">
+						<ul>
+							<h5>Company</h5>
+							<li><a href="http://www.uszip.com/">Home</a></li>
+							<li><a href="about.php?slc=USZip">About</a></li>
+							<li><a href="news.php">News</a></li>
+							<li><a href="press.php">Press</a></li>
+							<li><a href="awards.php">Awards</a></li>
+							<li><a href="testimonials.php">Testimonials</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-6 col-sm-7">
+						<ul>
+							<h5>Services</h5>
+							<li><a href="invite.php">Tell a Friend</a></li>
+							<li><a id="page-bookmark" href="">Bookmark Us</a></li>
+							<li><a href="zip_api.php">ZIP Codes API</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-4">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12">
+						<ul class="last">
+							<h5>Legal &amp; Contact</h5>
+							<li><a href="terms.php">Terms of Use</a></li>
+							<li><a href="privacy.php">Privacy Policy</a></li>
+							<li><a href="contact.php">Contact Us</a></li>
+							<li class="ex"><a href="advertise.php">Advertise</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+			
+<div id="s4-network" class="col-xs-12 col-sm-5">
+	<div  class="row">
+		<h5 class="col-xs-12 col-sm-12">The STANDS4 Network</h5>
+	</div>
+
+	<!-- Desktop version -->
+	<div class="clearfix row hidden-xs">
+		<div class="col-xs-12 col-sm-8">
+			<div class="row">
+				<div class="col-xs-6 col-sm-6">
+					<ul>
+						<li class="nw-abbreviations"><a rel="nofollow" href="http://www.abbreviations.com/">Abbreviations</a></li>
+						<li class="nw-definitions"><a rel="nofollow" href="http://www.definitions.net/">Definitions</a></li>
+						<li class="nw-phrases"><a rel="nofollow" href="http://www.phrases.net/">Phrases</a></li>
+						<li class="nw-references"><a rel="nofollow" href="http://www.references.net/">References</a></li>
+						<li class="nw-symbols"><a rel="nofollow" href="http://www.symbols.com/">Symbols</a></li>
+					</ul>
+				</div>
+
+				<div class="col-xs-6 col-sm-6">
+					<ul>
+						<li class="nw-biographies"><a rel="nofollow" href="http://www.biographies.net/">Biographies</a></li>
+						<li class="nw-grammar"><a rel="nofollow" href="http://www.grammar.com/">Grammar</a></li>
+						<li class="nw-poetry"><a rel="nofollow" href="http://www.poetry.net/">Poetry</a></li>
+						<li class="nw-rhymes"><a rel="nofollow" href="http://www.rhymes.net/">Rhymes</a></li>
+						<li class="nw-synonyms"><a rel="nofollow" href="http://www.synonyms.net/">Synonyms</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-4">
+			<ul class="last">
+				<li class="nw-convert"><a rel="nofollow" href="http://www.convert.net/">Conversions</a></li>
+				<li class="nw-lyrics"><a rel="nofollow" href="http://www.lyrics.net/">Lyrics</a></li>
+				<li class="nw-quotes"><a rel="nofollow" href="http://www.quotes.net/">Quotes</a></li>
+				<li class="nw-scripts"><a rel="nofollow" href="http://www.scripts.com/">Scripts</a></li>
+				<li class="nw-uszip"><a rel="nofollow" href="http://www.uszip.com/">Zip Codes</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- Mobile version -->
+	<div class="clearfix row hidden-sm hidden-md hidden-lg">
+		<div class="col-xs-12 col-sm-8">
+			<div class="row">
+				<div class="col-xs-6 col-sm-6">
+					<ul>
+						<li class="nw-abbreviations"><a rel="nofollow" href="http://www.abbreviations.com/">Abbreviations</a></li>
+						<li class="nw-biographies"><a rel="nofollow" href="http://www.biographies.net/">Biographies</a></li>
+						<li class="nw-convert"><a rel="nofollow" href="http://www.convert.net/">Conversions</a></li>
+						<li class="nw-definitions"><a rel="nofollow" href="http://www.definitions.net/">Definitions</a></li>
+						<li class="nw-grammar"><a rel="nofollow" href="http://www.grammar.com/">Grammar</a></li>
+						<li class="nw-lyrics"><a rel="nofollow" href="http://www.lyrics.net/">Lyrics</a></li>
+						<li class="nw-phrases"><a rel="nofollow" href="http://www.phrases.net/">Phrases</a></li>
+						<li class="nw-poetry"><a rel="nofollow" href="http://www.poetry.net/">Poetry</a></li>
+					</ul>
+				</div>
+
+				<div class="col-xs-6 col-sm-6">
+					<ul>
+
+						<li class="nw-quotes"><a rel="nofollow" href="http://www.quotes.net/">Quotes</a></li>
+						<li class="nw-references"><a rel="nofollow" href="http://www.references.net/">References</a></li>
+						<li class="nw-rhymes"><a rel="nofollow" href="http://www.rhymes.net/">Rhymes</a></li>
+						<li class="nw-scripts"><a rel="nofollow" href="http://www.scripts.com/">Scripts</a></li>
+						<li class="nw-symbols"><a rel="nofollow" href="http://www.symbols.com/">Symbols</a></li>
+						<li class="nw-synonyms"><a rel="nofollow" href="http://www.synonyms.net/">Synonyms</a></li>
+						<li class="nw-uszip"><a rel="nofollow" href="http://www.uszip.com/">Zip Codes</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="clearfix">
+		<div class="copyright"><strong>&copy; 2001-2016 STANDS4 LLC.</strong><br>All rights reserved.</div>
+		<div id="social-icons">
+			<a rel="nofollow" href="http://www.facebook.com/STANDS4" target="_blank"><div class="social fb"></div></a>
+			<a rel="nofollow" href="http://twitter.com/justadded" target="_blank"><div class="social tw"></div></a>
+			<a rel="nofollow" href="https://plus.google.com/+abbreviations/" rel="publisher" target="_blank"><div class="social gp"></div></a>
+		</div>
+	</div>
+</div>		</div>
+
+	</div>
+</footer>
+</div>
+<!--[if gt IE 8]>-->
+<script src="root/app_common/js/libs/modernizr-2.8.3.custom.min.js"></script>
+<!--<![endif]-->
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>window.jQuery || document.write('<script src="root/app_common/js/libs/jquery-1.11.2.min.js"><\/script>')</script>
+
+<script src="//www.google.com/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22visualization%22%2C%22version%22%3A%221%22%2C%22packages%22%3A%5B%22corechart%22%5D%7D%5D%7D"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+<script>window.jQuery || document.write('<script src="root/app_common/js/libs/jquery-ui-1.11.3.custom.min.js"><\/script>')</script>
+
+<script src="root/app_common/js/libs/jquery.placeholder.min.js"></script>
+
+<script src="js/uszip.js"></script></body>
+</html>
+<!-- Timer: 0.4608 secs | Server: 10.93.170.247 -->
