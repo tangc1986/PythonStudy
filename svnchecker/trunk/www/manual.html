@@ -1,0 +1,1629 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>SVNChecker Manual</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"></HEAD
+><BODY
+CLASS="book"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="BOOK"
+><A
+NAME="AEN1"
+></A
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="title"
+><A
+NAME="AEN1"
+>SVNChecker Manual</A
+></H1
+><H3
+CLASS="author"
+><A
+NAME="AEN4"
+></A
+>Heinrich Wendel</H3
+><HR></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="#AEN8"
+>SVNChecker</A
+></DT
+><DT
+>1. <A
+HREF="#AEN17"
+>Architecture</A
+></DT
+><DT
+>2. <A
+HREF="#AEN31"
+>Installation</A
+></DT
+><DD
+><DL
+><DT
+>2.1. <A
+HREF="#AEN33"
+>Requirements</A
+></DT
+><DT
+>2.2. <A
+HREF="#AEN36"
+>Download</A
+></DT
+><DT
+>2.3. <A
+HREF="#AEN40"
+>Hooks</A
+></DT
+></DL
+></DD
+><DT
+>3. <A
+HREF="#AEN45"
+>Configuration</A
+></DT
+><DD
+><DL
+><DT
+>3.1. <A
+HREF="#AEN47"
+>Configuration Files</A
+></DT
+><DT
+>3.2. <A
+HREF="#AEN50"
+>Basic configuration</A
+></DT
+><DT
+>3.3. <A
+HREF="#AEN54"
+>Resolving of Variables</A
+></DT
+><DT
+>3.4. <A
+HREF="#AEN58"
+>Profiles</A
+></DT
+><DT
+>3.5. <A
+HREF="#AEN62"
+>Variable Substitution</A
+></DT
+></DL
+></DD
+><DT
+>4. <A
+HREF="#AEN65"
+>Available Modules</A
+></DT
+><DD
+><DL
+><DT
+>4.1. <A
+HREF="#AEN67"
+>Checks</A
+></DT
+><DD
+><DL
+><DT
+>4.1.1. <A
+HREF="#AEN69"
+>AccessRights</A
+></DT
+><DT
+>4.1.2. <A
+HREF="#AEN93"
+>CaseInsensitiveFilenameClash</A
+></DT
+><DT
+>4.1.3. <A
+HREF="#AEN96"
+>Checkout</A
+></DT
+><DT
+>4.1.4. <A
+HREF="#AEN112"
+>Checkstyle</A
+></DT
+><DT
+>4.1.5. <A
+HREF="#AEN136"
+>Keywords</A
+></DT
+><DT
+>4.1.6. <A
+HREF="#AEN152"
+>Log</A
+></DT
+><DT
+>4.1.7. <A
+HREF="#AEN160"
+>Mantis</A
+></DT
+><DT
+>4.1.8. <A
+HREF="#AEN184"
+>Pylint</A
+></DT
+><DT
+>4.1.9. <A
+HREF="#AEN200"
+>UnitTests</A
+></DT
+><DT
+>4.1.10. <A
+HREF="#AEN212"
+>XMLValidator</A
+></DT
+></DL
+></DD
+><DT
+>4.2. <A
+HREF="#AEN224"
+>Handlers</A
+></DT
+><DD
+><DL
+><DT
+>4.2.1. <A
+HREF="#AEN226"
+>Console</A
+></DT
+><DT
+>4.2.2. <A
+HREF="#AEN229"
+>File</A
+></DT
+><DT
+>4.2.3. <A
+HREF="#AEN241"
+>Mail</A
+></DT
+><DT
+>4.2.4. <A
+HREF="#AEN253"
+>Mantis</A
+></DT
+></DL
+></DD
+></DL
+></DD
+><DT
+>5. <A
+HREF="#AEN269"
+>Developers Guide</A
+></DT
+><DD
+><DL
+><DT
+>5.1. <A
+HREF="#AEN272"
+>The Transaction class</A
+></DT
+><DT
+>5.2. <A
+HREF="#AEN315"
+>The Config class</A
+></DT
+><DT
+>5.3. <A
+HREF="#AEN335"
+>Implementing a Check</A
+></DT
+><DT
+>5.4. <A
+HREF="#AEN339"
+>Implementing a Handler</A
+></DT
+></DL
+></DD
+><DT
+>6. <A
+HREF="#AEN343"
+>Changelog</A
+></DT
+><DD
+><DL
+><DT
+>6.1. <A
+HREF="#AEN345"
+>Version 0.2.1</A
+></DT
+><DT
+>6.2. <A
+HREF="#AEN359"
+>Version 0.2</A
+></DT
+></DL
+></DD
+></DL
+></DIV
+><DIV
+CLASS="preface"
+><HR><H1
+><A
+NAME="AEN8"
+></A
+>SVNChecker</H1
+><P
+>&#13;			<DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="svncheckerlogo.png"></P
+></DIV
+>
+		</P
+><P
+>&#13;			SVNChecker is a framework for Subversion pre-commit and
+			post-commit hook scripts.
+		</P
+><P
+>&#13;			The SVNChecker allows tightly integration Subversion
+			into existing work and development environments and to
+			perform a variety of checks of the committed source code. The
+			major use cases are the integration of Subversion with issue
+			and bug tracking systems and the check of source code
+			against coding standards. But, the SVNChecker can be used
+			for any other use case where a tight integration with the
+			source code management is necessary.
+		</P
+><P
+>&#13;			SVNChecker is designed and developed as an open extensible
+			framework. By writing appropriate plug-ins, it can be
+			extended to almost any kind of "check" (for example, to
+			check source code or to query external databases). This can
+			be used to enforce a variety of regulations of the software
+			development process. By developing "handler" plug-ins, the
+			result of checks can be handled in almost all needed ways
+			(for example, for sending emails, updating databases, or
+			running any given external software).
+		</P
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN17"
+></A
+>Chapter 1. Architecture</H1
+><P
+>&#13;			The basic architecture of SVNChecker is displayed in the
+			following graphic. It provides a flexible framework which is
+			easily extendable by Checks and Handlers:
+			<DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="svncheckerConcept.png"></P
+></DIV
+>
+		</P
+><P
+>&#13;			The entry point for SVNChecker is the capability of
+			Subversion to support hook scripts which are called when
+			specific events are triggered by the repository. There are
+			nine different kinds of hook scripts, three deal with the
+			commit process, two with the change of revision properties
+			and four with the handling of locks. For a complete
+			reference of the hook scripts take a look at the
+			<A
+HREF="http://svnbook.red-bean.com/en/1.4/svn.ref.reposhooks.html"
+TARGET="_top"
+>&#13;				"Repository Hooks"
+			</A
+>
+			chapter in the Subversion manual. For now it is enough to
+			know about the pre-commit and post-commit hook.
+		</P
+><P
+>&#13;			The pre-commit script is called whenever a user wants to
+			commit his changes to the repository. A complete snapshot of
+			how the repository would look after this commit, a so called
+			transaction, is made. The transaction also includes
+			information about the author of the commit, the commit
+			message and a list of changed files. You can perform checks
+			on this transaction and reject it if doesn't conform to your
+			rules.
+		</P
+><P
+>&#13;			The post-commit script is called whenever a transaction was
+			completed and a new revision exists. A revision contains the
+			same information as a transaction with the minor difference
+			that the revision was already committed and can't be undone
+			anymore. But you still might want to send a log message
+			containing a list of all changed files to a mailing list for
+			example.
+		</P
+><P
+>&#13;			In the following the term transaction will be used for both,
+			a real transaction and a revision, since the SVNChecker
+			provides an abstraction layer which handles both cases
+			uniformly.
+		</P
+><P
+>&#13;			Based on this transaction a list of checks, e.g. code
+			convention examination, verification of access rights or
+			validation of the commit message, can be performed. Each
+			check returns an exit code, which is zero for success and
+			bigger than zero for failure, and a message including
+			further details.
+		</P
+><P
+>&#13;			After each check was performed, the message, the exit code
+			and the transaction are passed to the configured handlers. A
+			handler is an extension which processes the output of the
+			checks, e.g. it can send mails, create a log file or print
+			the output to the console.
+		</P
+><P
+>&#13;			The configuration of the SVNChecker is very flexible. You
+			can define the checks for the pre-commit and post-commit
+			cases and a list of handlers for each check. Furthermore
+			each check and handler has access to the configuration for
+			its own purpose. If you use SVNChecker for more than one
+			repository you can define a global system configuration with
+			fixed values which cannot be overwritten by the local
+			configuration in each repository. For bigger repositories
+			you can configure different profiles affecting different
+			parts of the repository. Each profile can have its own
+			configuration and share some default values with the other
+			profiles. One use-case may be stricter checks for the trunk
+			and laxer rules for branches.
+		</P
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN31"
+></A
+>Chapter 2. Installation</H1
+><DIV
+CLASS="sect1"
+><H2
+CLASS="sect1"
+><A
+NAME="AEN33"
+>2.1. Requirements</A
+></H2
+><P
+>&#13;				SVNChecker requires at least python 2.4 and Subversion
+				1.2. It runs on both, Windows and *nix. Some checks may
+				depend on external tools. For the requirements of the
+				individual checks take a look at the "Available Modules"
+				section.
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN36"
+>2.2. Download</A
+></H2
+><P
+>&#13;				SVNChecker is available from the
+				<A
+HREF="http://svnchecker.tigris.org"
+TARGET="_top"
+>&#13;					project side at tigris
+				</A
+>
+				.
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN40"
+>2.3. Hooks</A
+></H2
+><P
+>&#13;				After extracting the SVNChecker package to an arbitrary
+				directory, you have to create two files in your
+				Subversion hooks directory. On *nix systems those files
+				are named pre-commit and post-commit and must be set
+				executable. They contain the following content, where
+				%pathtosvnchecker% is replaced by the directory to which
+				you unpacked the SVNChecker and %hook% is either
+				PreCommit or PostCommit (case-sensitive):
+
+				<PRE
+CLASS="programlisting"
+>&#13;#!/bin/sh
+/usr/bin/env python %pathtosvnchecker%/Main.py %hook% $1 $2 || exit 1
+				</PRE
+>
+
+				On Windows systems those files are named pre-commit.bat and
+				post-commit.bat with the following contents,
+				%pathtopython% replaced by the path to the python
+				executable:
+
+				<PRE
+CLASS="programlisting"
+>&#13;%pathtopython% %pathtosvnchecker%/Main.py %hook% $1 $2 || exit 1
+				</PRE
+>
+			</P
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN45"
+></A
+>Chapter 3. Configuration</H1
+><DIV
+CLASS="sect1"
+><H2
+CLASS="sect1"
+><A
+NAME="AEN47"
+>3.1. Configuration Files</A
+></H2
+><P
+>&#13;				The SVNChecker can use any combination of the following
+				two configuration files. The first one is a global
+				configuration file which affects all repositories
+				installed on the same system and must be located in the
+				SVNChecker directory, just aside of "Main.py", named
+				"svncheckerconfig.ini". The second one is a repository
+				local configuration file which must be located in the
+				"hooks" directory of a repository and names
+				"svncheckerconfig.ini" as well. If only one of those
+				configuration files exist, this only one will be used.
+				If both exist, the options from the global file will
+				override the options from the local one. The file format
+				is a simple ini-like format with categories, which are
+				used for profiles, and key=value pairs.
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN50"
+>3.2. Basic configuration</A
+></H2
+><P
+>&#13;				The basic configuration of the SVNChecker is very
+				simple. It starts with a category, named "Default".
+				After that you need to specify which checks to activate
+				for the pre-commit and post-commit hooks. For each check
+				you then activate the desired handlers for the success
+				and failure cases. An example is shown below:
+
+				<PRE
+CLASS="programlisting"
+>&#13;[Default]
+Main.PreCommitChecks=Pylint, XMLValidator
+Main.PostCommitChecks=Log
+
+Pylint.SuccessHandlers=Console, Mail
+Pylint.FailureHandlers=Console, Mail
+
+XMLValidator.SuccessHandlers=Console, Mail
+XMLValidator.FailureHandlers=Console, Mail
+
+Log.SuccessHandlers=Console, Mail
+Log.FailureHandlers=Console, Mail
+				</PRE
+>
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN54"
+>3.3. Resolving of Variables</A
+></H2
+><P
+>&#13;				You might have seen in the previous example that the
+				flexibility is very high, you can configure a success
+				and failure handlers for each check. But this can make
+				the configuration file very big and unclear, typing the
+				same code every time although you want to use the same
+				handlers for all checks. Furthermore one configuration
+				option may be required by more then one check, e.g. the
+				path to the java binary. To support those cases the
+				SVNChecker does not only look for the real name of the
+				specified configuration option. If it can't find the
+				complete name it will substitute the first part of the
+				check, the one before the "." with "Main". So the
+				previous example could have also been written as:
+								
+				<PRE
+CLASS="programlisting"
+>&#13;[Default]
+Main.PreCommitChecks=Pylint, XMLValidator
+Main.PostCommitChecks=Log
+
+Main.SuccessHandlers=Console, Mail
+Main.FailureHandlers=Console, Mail
+				</PRE
+>
+				
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN58"
+>3.4. Profiles</A
+></H2
+><P
+>&#13;				If your repository grows or you manage different trunks
+				and branches, you might want to configure specific
+				settings for different parts of the repository. In order
+				to do that the SVNChecker support profiles. Profiles
+				allow you to configure different settings of the
+				SVNChecker for different files or paths in the
+				repository. Profiles are defined by categories in the
+				configuration file and must have a "Main.Regex"
+				configuration option which specifies a regular
+				expression which matches all files this profile is valid
+				for. All files that didn't match a profile will be
+				checked against the "Default" profile. Here an example
+				profile that disables all PreCommitChecks for branches:
+
+				<PRE
+CLASS="programlisting"
+>&#13;[Default]
+Main.PreCommitChecks=Pylint, XMLValidator
+Main.PostCommitChecks=Log
+
+Main.SuccessHandlers=Console, Mail
+Main.FailureHandlers=Console, Mail
+
+[Branches]
+Main.Regex=^branches/.*$
+Main.PreCommitChecks=
+				</PRE
+>
+
+				If a specified variable can't be found in the given
+				profile the one from the default profile will be
+				checked. In this example Main.PostCommitChecks will be
+				taken from the default profile.
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN62"
+>3.5. Variable Substitution</A
+></H2
+><P
+>&#13;				Sometimes it might be useful to know the path of the
+				hooks directory of the repository in your configuration
+				file, e.g. when writing log files. For this purpose you
+				can use the string "%HOOKS%", which will be replaced by
+				the real directory during runtime.
+			</P
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN65"
+></A
+>Chapter 4. Available Modules</H1
+><DIV
+CLASS="sect1"
+><H2
+CLASS="sect1"
+><A
+NAME="AEN67"
+>4.1. Checks</A
+></H2
+><DIV
+CLASS="sect2"
+><H3
+CLASS="sect2"
+><A
+NAME="AEN69"
+>4.1.1. AccessRights</A
+></H3
+><P
+>&#13;					With the help of this check you can restrict or
+					grant access for all or selected files only to
+					specified users. The configuration options are:
+
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>AccessRights.Rules</DT
+><DD
+><P
+>&#13;									List of rules that should be
+									checked. Those are just identifiers
+									for the following options. (Default="")
+								</P
+></DD
+><DT
+>AccessRights.%RULE%.CheckFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*")
+								</P
+></DD
+><DT
+>AccessRights.%RULE%.IgnoreFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</P
+></DD
+><DT
+>AccessRights.%RULE%.AllowUsers</DT
+><DD
+><P
+>&#13;									List of users that may commit
+									changes to the files. (Default="")
+								</P
+></DD
+><DT
+>AccessRights.%RULE%.DenyUsers</DT
+><DD
+><P
+>&#13;									List of users that may not commit
+									changes to the files. (Default="")
+								</P
+></DD
+></DL
+></DIV
+>
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN93"
+>4.1.2. CaseInsensitiveFilenameClash</A
+></H3
+><P
+>&#13;					This check rejects commits which contain files which
+					already exist in the repository with the same name
+					but one or more characters in a different case.
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN96"
+>4.1.3. Checkout</A
+></H3
+><P
+>&#13;					This check checks-out files from the repository to
+					the local filesystem. SECURITY: Please be careful to
+					not accidently overwrite any file. The configuration
+					options are:
+
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Checkout.Entries</DT
+><DD
+><P
+>&#13;									List of entries that should be
+									checked-out. Those are just
+									identifiers for the following
+									options. (Default="")
+								</P
+></DD
+><DT
+>Checkout.%ENTRY%.Source</DT
+><DD
+><P
+>&#13;									Name of the file in the repository.
+								</P
+></DD
+><DT
+>Checkout.%ENTRY%.Destination</DT
+><DD
+><P
+>&#13;									Destination, including name, where
+									to put the file on the local
+									filesystem.
+								</P
+></DD
+></DL
+></DIV
+>
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN112"
+>4.1.4. Checkstyle</A
+></H3
+><P
+>&#13;					This check runs checkstyle over a given set of
+					files. The configuration options are:
+					
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Checkstyle.Java</DT
+><DD
+><P
+>&#13;									Path to the java binary.
+								</P
+></DD
+><DT
+>Checkstyle.Classpath</DT
+><DD
+><P
+>&#13;									Path to the checkstyle-all.jar
+								</P
+></DD
+><DT
+>Checkstyle.ConfigFile</DT
+><DD
+><P
+>&#13;									Path to the checkstyle configuration file.
+								</P
+></DD
+><DT
+>Checkstyle.CheckFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*\.java")
+								</P
+></DD
+><DT
+>Checkstyle.IgnoreFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</P
+></DD
+></DL
+></DIV
+>
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN136"
+>4.1.5. Keywords</A
+></H3
+><P
+>&#13;					This check tests if a specified list of keywords is
+					set for a specified set of files. The configuration
+					options are:
+
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Keywords.Keywords</DT
+><DD
+><P
+>&#13;									Keywords which should be checked.
+								</P
+></DD
+><DT
+>Keywords.Keywords.CheckFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*")
+								</P
+></DD
+><DT
+>Keywords.Keywords.IgnoreFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</P
+></DD
+></DL
+></DIV
+>
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN152"
+>4.1.6. Log</A
+></H3
+><P
+>&#13;					Generates a log message. The configuration options
+					are:
+					
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Log.ViewVcUrl</DT
+><DD
+><P
+>&#13;									Url to viewvc to include in the log
+									message. (Default="")
+								</P
+></DD
+></DL
+></DIV
+>
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN160"
+>4.1.7. Mantis</A
+></H3
+><P
+>&#13;					Checks if the given mantis id(s) exists, is set to
+					the status "in_progress" and is assigned to the
+					currently committing user. The Mantis ID must be
+					specified in the log message and match the pattern
+					'MANTIS([:#]|[\s\-_]ID) ([0-9]+)'. The configuration
+					options are:
+
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Mantis.CheckInProgress</DT
+><DD
+><P
+>&#13;									Whether to check the "in_progress"
+									status. (Default=True)
+								</P
+></DD
+><DT
+>Mantis.CheckHandler</DT
+><DD
+><P
+>&#13;									Whether to check if the issue is
+									assigned to the currently committing
+									user. (Default=True)
+								</P
+></DD
+><DT
+>Mantis.URL</DT
+><DD
+><P
+>&#13;									URL to the mantisconnect script.
+								</P
+></DD
+><DT
+>Mantis.User</DT
+><DD
+><P
+>&#13;									Username to login in mantis.
+								</P
+></DD
+><DT
+>Mantis.Password</DT
+><DD
+><P
+>&#13;									Password to login in mantis.
+								</P
+></DD
+></DL
+></DIV
+>
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN184"
+>4.1.8. Pylint</A
+></H3
+><P
+>&#13;					This check runs pylint over a given set of
+					files. The configuration options are:
+					
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Pylint.ConfigFile</DT
+><DD
+><P
+>&#13;									Path to the pylint configuration file. (Default="")
+								</P
+></DD
+><DT
+>Pylint.CheckFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*\.py")
+								</P
+></DD
+><DT
+>Pylint.IgnoreFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</P
+></DD
+></DL
+></DIV
+>			
+				
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN200"
+>4.1.9. UnitTests</A
+></H3
+><P
+>&#13;					This check tests if a unit test exists for a given
+					java class. The java class must follow the pattern
+					/main/.../Class.java and the unit test must follow
+					the pattern /main/.../TestClass.java. Interfaces are
+					omitted. The configuration options are:
+
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>UnitTests.CheckFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*\.java")
+								</P
+></DD
+><DT
+>UnitTests.IgnoreFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</P
+></DD
+></DL
+></DIV
+>			
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN212"
+>4.1.10. XMLValidator</A
+></H3
+><P
+>&#13;					This check checks if a file is a valid xml file.
+				
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>XMLValidator.CheckFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*\.xml")
+								</P
+></DD
+><DT
+>XMLValidator.IgnoreFiles</DT
+><DD
+><P
+>&#13;									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</P
+></DD
+></DL
+></DIV
+>
+				</P
+></DIV
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN224"
+>4.2. Handlers</A
+></H2
+><DIV
+CLASS="sect2"
+><H3
+CLASS="sect2"
+><A
+NAME="AEN226"
+>4.2.1. Console</A
+></H3
+><P
+>&#13;					Prints the output either to sys.stderr or
+					sys.stdout.
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN229"
+>4.2.2. File</A
+></H3
+><P
+>&#13;					Print the output to a given file. Configuration
+					options are:
+					
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>%Check%.SuccessFile</DT
+><DD
+><P
+>&#13;									Path to the file to print the output
+									in the case of success.
+								</P
+></DD
+><DT
+>%Check%.FailureFile</DT
+><DD
+><P
+>&#13;									Path to the file to print the output
+									in the case of failure.
+								</P
+></DD
+></DL
+></DIV
+>		
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN241"
+>4.2.3. Mail</A
+></H3
+><P
+>&#13;					Mails the output to the given addresses. The configuration options are:
+					
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>%Check%.SuccessAddresses</DT
+><DD
+><P
+>&#13;									Mail addresses to send the output in
+									the case of success.
+								</P
+></DD
+><DT
+>%Check%.FailureAddresses</DT
+><DD
+><P
+>&#13;									Mail addresses to send the output in
+									the case of failure.
+								</P
+></DD
+></DL
+></DIV
+>						
+				
+				</P
+></DIV
+><DIV
+CLASS="sect2"
+><HR><H3
+CLASS="sect2"
+><A
+NAME="AEN253"
+>4.2.4. Mantis</A
+></H3
+><P
+>&#13;					Appends the message as bug note to the given mantis
+					id(s). The Mantis ID must be specified in the
+					logmessage and match the pattern
+					'MANTIS([:#]|[\s\-_]ID) ([0-9]+)'. Available
+					configuration options are:
+
+					<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Mantis.URL</DT
+><DD
+><P
+>&#13;									URL to the mantisconnect script.
+								</P
+></DD
+><DT
+>Mantis.User</DT
+><DD
+><P
+>&#13;									Username to login in mantis.
+								</P
+></DD
+><DT
+>Mantis.Password</DT
+><DD
+><P
+>&#13;									Password to login in mantis.
+								</P
+></DD
+></DL
+></DIV
+>
+				</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN269"
+></A
+>Chapter 5. Developers Guide</H1
+><P
+>&#13;			Developing Checks and Handlers to extend the SVNChecker is a very easy
+			process. Each of them must only implement one method which
+			does the actual work. As helper classes the current
+			Transaction and Configuration is provided to them.
+		</P
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN272"
+>5.1. The Transaction class</A
+></H2
+><P
+>&#13;				The Transaction class gives you all information you need
+				to know about the commit and the repository. It has the
+				following methods:
+
+				<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>getUserID()</DT
+><DD
+><P
+>&#13;								Returns a string with the username of
+								the current transaction.
+							</P
+></DD
+><DT
+>getFiles(checkList, ignoreList)</DT
+><DD
+><P
+>&#13;								Returns a map of all modified files. The
+								keys of the map are the filenames. The
+								value of each key of the map is the associated
+								attribute, which can be one of the
+								default
+								<A
+HREF="http://svnbook.red-bean.com/en/1.4/svn-book.html#svn.ref.svnlook.c.changed"
+TARGET="_top"
+>&#13;									svnlook changed
+								</A
+>
+								attributes.
+							</P
+><P
+>&#13;								CheckList must be a list of regular
+								expressions for files which should be
+								included, it defaults to [".*"].
+							</P
+><P
+>&#13;								IgnoreList must be a list of regular
+								expressions for files which should be
+								ignored, it defaults to [].
+							</P
+></DD
+><DT
+>getFile(filename)</DT
+><DD
+><P
+>&#13;								Returns the path to a temporary copy of
+								a file in the repository.
+							</P
+></DD
+><DT
+>fileExists(filename, ignoreCase=False)</DT
+><DD
+><P
+>&#13;								Returns whether a file exists in the
+								current transaction or revision of the
+								repository, optionally case-insensitive.
+							</P
+></DD
+><DT
+>getCommitMsg()</DT
+><DD
+><P
+>Returns the commit message.</P
+></DD
+><DT
+>getRevision()</DT
+><DD
+><P
+>&#13;								Return the id of the revision or
+								transaction.
+							</P
+></DD
+><DT
+>getProperty(keyword, filename)</DT
+><DD
+><P
+>&#13;								Returns a specified property of a file.
+							</P
+></DD
+><DT
+>hasProperty(keyword, filename)</DT
+><DD
+><P
+>&#13;								Checks if a given file has the given
+								property.
+							</P
+></DD
+><DT
+>listProperties(filename)</DT
+><DD
+><P
+>&#13;								Returns a list of names of the
+								properties for a file.
+							</P
+></DD
+></DL
+></DIV
+>
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN315"
+>5.2. The Config class</A
+></H2
+><P
+>&#13;				The Configuration class provides you with all required
+				methods to access configuration variables:
+
+				<P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>getString(var, default=None)</DT
+><DD
+><P
+>&#13;								Returns a variable as string. If the
+								variable does not exist and default is
+								set default will be returned, otherwise
+								a NoSuchConfigurationValueError will be
+								raised.
+							</P
+></DD
+><DT
+>getArray(var, default=None)</DT
+><DD
+><P
+>&#13;								Returns a variable as array. The
+								configuration string is split by the ','
+								character. If the variable does not
+								exist and default is set default will be
+								returned, otherwise a
+								NoSuchConfigurationValueError will be
+								raised.
+							</P
+></DD
+><DT
+>getBoolean(var, default=None)</DT
+><DD
+><P
+>&#13;								Returns a variable as boolean. True,
+								true, 1 will return True. False, false,
+								0 will return False. If the variable
+								does not match the pattern a ValueError
+								will be raised. If the variable does not
+								exist and default is set default will be
+								returned, otherwise a
+								NoSuchConfigurationValueError will be
+								raised.
+							</P
+></DD
+><DT
+>getInteger(var, default=None)</DT
+><DD
+><P
+>&#13;								Returns a variable as integer. If the
+								variable cannot be converted to an
+								integer a ValueError will be raised. If
+								the variable does not exist and default
+								is set default will be returned,
+								otherwise a
+								NoSuchConfigurationValueError will be
+								raised.
+							</P
+></DD
+></DL
+></DIV
+>
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN335"
+>5.3. Implementing a Check</A
+></H2
+><P
+>&#13;				To implement a new Check you only need to write a python
+				module containing a method named "run", with two
+				parameters, "transaction" and "config". The return value
+				must be a tuple containing the return message and the
+				exit code. You have to put the check into the "checks"
+				package of the SVNChecker. Here an example of a simple
+				check, testing if a xml file is parseable:
+
+				<PRE
+CLASS="programlisting"
+>&#13;from xml.dom import minidom
+from xml.parsers import expat
+
+def run(transaction, config):
+
+    check = config.getArray("XMLValidator.CheckFiles", [".*\.xml"])
+    ignore = config.getArray("XMLValidator.IgnoreFiles", [])
+    files = transaction.getFiles(check, ignore)
+
+    msg= ""
+    for filename, attribute in files.iteritems():
+        if attribute in ["A", "U"]:
+            try:
+                minidom.parse(transaction.getFile(filename))
+            except expat.ExpatError, e:
+                msg += "XML Validation error in file %r: %s" % (filename, e)
+
+    if msg:
+        return (msg, 1)
+    else:
+        return ("", 0)
+				</PRE
+>
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN339"
+>5.4. Implementing a Handler</A
+></H2
+><P
+>&#13;				To implement a new Handler you only need to write a
+				python module containing a method named "run", with
+				five parameters, "transaction", "config", "check", "msg"
+				and "exitCode". "check" is the name of the just executed
+				check. Here an example of a simple handler, printing the
+				output to the console:
+
+				<PRE
+CLASS="programlisting"
+>&#13;import sys
+
+separator = "\n" + "=" * 80 + "\n"
+
+def run(transaction, config, check, msg, exitCode):
+
+    if (exitCode == 1):
+        out = sys.stderr
+    else:
+        out = sys.stdout
+
+    out.write(separator)
+    out.write(msg)
+    out.write(separator)
+				</PRE
+>
+			</P
+></DIV
+></DIV
+><DIV
+CLASS="chapter"
+><HR><H1
+><A
+NAME="AEN343"
+></A
+>Chapter 6. Changelog</H1
+><DIV
+CLASS="sect1"
+><H2
+CLASS="sect1"
+><A
+NAME="AEN345"
+>6.1. Version 0.2.1</A
+></H2
+><P
+>&#13;				<P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>&#13;							Fixed bug in the pylint check that made the check pass although it failed.
+						</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>&#13;							Made the "Pylint.ConfigFile" configuration option optional, a default pylintrc will be used if you don't specify it.
+						</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>&#13;							Fixed a bug in the transaction module that returned an empty file when calling getFile() more than once.
+						</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>&#13;							Fixed a bug in the transaction module to avoid a deadlock when receiving big files.
+						</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>&#13;							Make the SVNChecker compatible with python 2.4.
+						</P
+></LI
+></UL
+>
+			</P
+></DIV
+><DIV
+CLASS="sect1"
+><HR><H2
+CLASS="sect1"
+><A
+NAME="AEN359"
+>6.2. Version 0.2</A
+></H2
+><P
+>&#13;				This is the first big revision of the SVNChecker. The
+				interfaces to implement a Check or Handler were changed.
+				Furthermore the Transaction and Config classes have been
+				improved. If you develop your own modules take a look at
+				the updated "Developers Guide". A lot of checks have
+				been enhanced, e.g. Checkstyle and Pylint are faster
+				now, and new Checks were added, including Checkout and
+				CaseInsensitiveFilenameClash. For a complete reference
+				of the available Checks and Handlers and their
+				configuration options take a look at the "Available
+				Modules" section. The configuration now supports a
+				system-wide file which can define configuration options
+				which are fixed for all installed repositories. If you
+				want to use the hooks directory in the configuration
+				file you can now use %HOOKS%, which will automatically
+				be replaced by the real directory. With the help of a
+				new test-environment all modules have undergone a better
+				testing for improved stability. A complete list of fixed
+				issues is available via the issue tracker at the tigris
+				project page.
+			</P
+></DIV
+></DIV
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,1200 @@
+<?xml version='1.0'?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.5//EN"
+               "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<book>
+	<title>SVNChecker Manual</title>
+	<bookinfo>
+		<author>
+			<firstname>Heinrich</firstname>
+			<surname>Wendel</surname>
+		</author>
+		<date>29 February 2008</date>
+	</bookinfo>
+	<preface>
+		<title>SVNChecker</title>
+		<para>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="svncheckerlogo.png"
+						format="PNG" />
+				</imageobject>
+			</mediaobject>
+		</para>
+
+		<para>
+			SVNChecker is a framework for Subversion pre-commit and
+			post-commit hook scripts.
+		</para>
+
+		<para>
+			The SVNChecker allows tightly integration Subversion
+			into existing work and development environments and to
+			perform a variety of checks of the committed source code. The
+			major use cases are the integration of Subversion with issue
+			and bug tracking systems and the check of source code
+			against coding standards. But, the SVNChecker can be used
+			for any other use case where a tight integration with the
+			source code management is necessary.
+		</para>
+
+		<para>
+			SVNChecker is designed and developed as an open extensible
+			framework. By writing appropriate plug-ins, it can be
+			extended to almost any kind of "check" (for example, to
+			check source code or to query external databases). This can
+			be used to enforce a variety of regulations of the software
+			development process. By developing "handler" plug-ins, the
+			result of checks can be handled in almost all needed ways
+			(for example, for sending emails, updating databases, or
+			running any given external software).
+		</para>
+	</preface>
+	<chapter>
+		<title>Architecture</title>
+
+		<para>
+			The basic architecture of SVNChecker is displayed in the
+			following graphic. It provides a flexible framework which is
+			easily extendable by Checks and Handlers:
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="svncheckerConcept.png"
+						format="PNG" />
+				</imageobject>
+			</mediaobject>
+		</para>
+
+		<para>
+			The entry point for SVNChecker is the capability of
+			Subversion to support hook scripts which are called when
+			specific events are triggered by the repository. There are
+			nine different kinds of hook scripts, three deal with the
+			commit process, two with the change of revision properties
+			and four with the handling of locks. For a complete
+			reference of the hook scripts take a look at the
+			<ulink
+				url='http://svnbook.red-bean.com/en/1.4/svn.ref.reposhooks.html'>
+				"Repository Hooks"
+			</ulink>
+			chapter in the Subversion manual. For now it is enough to
+			know about the pre-commit and post-commit hook.
+		</para>
+
+		<para>
+			The pre-commit script is called whenever a user wants to
+			commit his changes to the repository. A complete snapshot of
+			how the repository would look after this commit, a so called
+			transaction, is made. The transaction also includes
+			information about the author of the commit, the commit
+			message and a list of changed files. You can perform checks
+			on this transaction and reject it if doesn't conform to your
+			rules.
+		</para>
+
+		<para>
+			The post-commit script is called whenever a transaction was
+			completed and a new revision exists. A revision contains the
+			same information as a transaction with the minor difference
+			that the revision was already committed and can't be undone
+			anymore. But you still might want to send a log message
+			containing a list of all changed files to a mailing list for
+			example.
+		</para>
+
+		<para>
+			In the following the term transaction will be used for both,
+			a real transaction and a revision, since the SVNChecker
+			provides an abstraction layer which handles both cases
+			uniformly.
+		</para>
+
+		<para>
+			Based on this transaction a list of checks, e.g. code
+			convention examination, verification of access rights or
+			validation of the commit message, can be performed. Each
+			check returns an exit code, which is zero for success and
+			bigger than zero for failure, and a message including
+			further details.
+		</para>
+
+		<para>
+			After each check was performed, the message, the exit code
+			and the transaction are passed to the configured handlers. A
+			handler is an extension which processes the output of the
+			checks, e.g. it can send mails, create a log file or print
+			the output to the console.
+		</para>
+
+		<para>
+			The configuration of the SVNChecker is very flexible. You
+			can define the checks for the pre-commit and post-commit
+			cases and a list of handlers for each check. Furthermore
+			each check and handler has access to the configuration for
+			its own purpose. If you use SVNChecker for more than one
+			repository you can define a global system configuration with
+			fixed values which cannot be overwritten by the local
+			configuration in each repository. For bigger repositories
+			you can configure different profiles affecting different
+			parts of the repository. Each profile can have its own
+			configuration and share some default values with the other
+			profiles. One use-case may be stricter checks for the trunk
+			and laxer rules for branches.
+		</para>
+	</chapter>
+
+	<chapter>
+		<title>Installation</title>
+		<sect1>
+			<title>Requirements</title>
+			<para>
+				SVNChecker requires at least python 2.4 and Subversion
+				1.2. It runs on both, Windows and *nix. Some checks may
+				depend on external tools. For the requirements of the
+				individual checks take a look at the "Available Modules"
+				section.
+			</para>
+		</sect1>
+		<sect1>
+			<title>Download</title>
+			<para>
+				SVNChecker is available from the
+				<ulink url="http://svnchecker.tigris.org">
+					project side at tigris
+				</ulink>
+				.
+			</para>
+		</sect1>
+		<sect1>
+			<title>Hooks</title>
+			<para>
+				After extracting the SVNChecker package to an arbitrary
+				directory, you have to create two files in your
+				Subversion hooks directory. On *nix systems those files
+				are named pre-commit and post-commit and must be set
+				executable. They contain the following content, where
+				%pathtosvnchecker% is replaced by the directory to which
+				you unpacked the SVNChecker and %hook% is either
+				PreCommit or PostCommit (case-sensitive):
+
+				<programlisting><![CDATA[
+#!/bin/sh
+/usr/bin/env python %pathtosvnchecker%/svnchecker.py %hook% $1 $2 || exit 1
+				]]></programlisting>
+
+				On Windows systems those files are named pre-commit.bat and
+				post-commit.bat with the following contents,
+				%pathtopython% replaced by the path to the python
+				executable:
+
+				<programlisting><![CDATA[
+%pathtopython% %pathtosvnchecker%/svnchecker.py %hook% $1 $2 || exit 1
+				]]></programlisting>
+			</para>
+		</sect1>
+	</chapter>
+
+	<chapter>
+		<title>Configuration</title>
+		<sect1>
+			<title>Configuration Files</title>
+			<para>
+				The SVNChecker can use any combination of the following
+				two configuration files. The first one is a global
+				configuration file which affects all repositories
+				installed on the same system and must be located in the
+				SVNChecker directory, just aside of "svnchecker.py", named
+				"svncheckerconfig.ini". The second one is a repository
+				local configuration file which must be located in the
+				"hooks" directory of a repository and names
+				"svncheckerconfig.ini" as well. If only one of those
+				configuration files exist, this only one will be used.
+				If both exist, the options from the global file will
+				override the options from the local one. The file format
+				is a simple ini-like format with categories, which are
+				used for profiles, and key=value pairs.
+			</para>
+		</sect1>
+		<sect1>
+			<title>Basic configuration</title>
+			<para>
+				The basic configuration of the SVNChecker is very
+				simple. It starts with a category, named "Default".
+				After that you need to specify which checks to activate
+				for the pre-commit and post-commit hooks. For each check
+				you then activate the desired handlers for the success
+				and failure cases. An example is shown below:
+
+				<programlisting><![CDATA[
+[Default]
+Main.PreCommitChecks=Pylint, XMLValidator
+Main.PostCommitChecks=Log
+
+Pylint.SuccessHandlers=Console, Mail
+Pylint.FailureHandlers=Console, Mail
+
+XMLValidator.SuccessHandlers=Console, Mail
+XMLValidator.FailureHandlers=Console, Mail
+
+Log.SuccessHandlers=Console, Mail
+Log.FailureHandlers=Console, Mail
+				]]></programlisting>
+			</para>
+		</sect1>
+		<sect1>
+			<title>Resolving of Variables</title>
+			<para>
+				You might have seen in the previous example that the
+				flexibility is very high, you can configure a success
+				and failure handlers for each check. But this can make
+				the configuration file very big and unclear, typing the
+				same code every time although you want to use the same
+				handlers for all checks. Furthermore one configuration
+				option may be required by more then one check, e.g. the
+				path to the java binary. To support those cases the
+				SVNChecker does not only look for the real name of the
+				specified configuration option. If it can't find the
+				complete name it will substitute the first part of the
+				check, the one before the "." with "Main". So the
+				previous example could have also been written as:
+								
+				<programlisting><![CDATA[
+[Default]
+Main.PreCommitChecks=Pylint, XMLValidator
+Main.PostCommitChecks=Log
+
+Main.SuccessHandlers=Console, Mail
+Main.FailureHandlers=Console, Mail
+				]]></programlisting>
+				
+			</para>
+		</sect1>
+		<sect1>
+			<title>Profiles</title>
+			<para>
+				If your repository grows or you manage different trunks
+				and branches, you might want to configure specific
+				settings for different parts of the repository. In order
+				to do that the SVNChecker support profiles. Profiles
+				allow you to configure different settings of the
+				SVNChecker for different files or paths in the
+				repository. Profiles are defined by categories in the
+				configuration file and must have a "Main.Regex"
+				configuration option which specifies a regular
+				expression which matches all files this profile is valid
+				for. All files that didn't match a profile will be
+				checked against the "Default" profile. Here an example
+				profile that disables all PreCommitChecks for branches:
+
+				<programlisting><![CDATA[
+[Default]
+Main.PreCommitChecks=Pylint, XMLValidator
+Main.PostCommitChecks=Log
+
+Main.SuccessHandlers=Console, Mail
+Main.FailureHandlers=Console, Mail
+
+[Branches]
+Main.Regex=^branches/.*$
+Main.PreCommitChecks=
+				]]></programlisting>
+
+				If a specified variable can't be found in the given
+				profile the one from the default profile will be
+				checked. In this example Main.PostCommitChecks will be
+				taken from the default profile.
+			</para>
+		</sect1>
+		<sect1>
+			<title>Variable Substitution</title>
+			<para>
+				Sometimes it might be useful to know the path of the
+				hooks directory of the repository in your configuration
+				file, e.g. when writing log files. For this purpose you
+				can use the string "%HOOKS%", which will be replaced by
+				the real directory during runtime.
+			</para>
+		</sect1>
+	</chapter>
+
+	<chapter>
+		<title>Available Modules</title>
+		<sect1>
+			<title>Checks</title>
+			<sect2>
+				<title>AccessRights</title>
+				<para>
+					With the help of this check you can restrict or
+					grant access for all or selected files only to
+					specified users. The configuration options are:
+
+					<variablelist>
+						<varlistentry>
+							<term>AccessRights.Rules</term>
+							<listitem>
+								<para>
+									List of rules that should be
+									checked. Those are just identifiers
+									for the following options. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>AccessRights.%RULE%.CheckFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>AccessRights.%RULE%.IgnoreFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>AccessRights.%RULE%.AllowUsers</term>
+							<listitem>
+								<para>
+									List of users that may commit
+									changes to the files. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>AccessRights.%RULE%.DenyUsers</term>
+							<listitem>
+								<para>
+									List of users that may not commit
+									changes to the files. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+
+					</variablelist>
+				</para>
+			</sect2>
+			<sect2>
+				<title>CaseInsensitiveFilenameClash</title>
+				<para>
+					This check rejects commits which contain files which
+					already exist in the repository with the same name
+					but one or more characters in a different case.
+				</para>
+			</sect2>
+			<sect2>
+				<title>Checkout</title>
+				<para>
+					This check checks-out files from the repository to
+					the local filesystem. SECURITY: Please be careful to
+					not accidently overwrite any file. The configuration
+					options are:
+
+					<variablelist>
+						<varlistentry>
+							<term>Checkout.Entries</term>
+							<listitem>
+								<para>
+									List of entries that should be
+									checked-out. Those are just
+									identifiers for the following
+									options. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>Checkout.%ENTRY%.Source</term>
+							<listitem>
+								<para>
+									Name of the file in the repository.
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>Checkout.%ENTRY%.Destination</term>
+							<listitem>
+								<para>
+									Destination, including name, where
+									to put the file on the local
+									filesystem.
+								</para>
+							</listitem>
+						</varlistentry>
+
+					</variablelist>
+				</para>
+			</sect2>
+			<sect2>
+				<title>Checkstyle</title>
+				<para>
+					This check runs checkstyle over a given set of
+					files. The configuration options are:
+					
+					<variablelist>
+						<varlistentry>
+							<term>Checkstyle.Java</term>
+							<listitem>
+								<para>
+									Path to the java binary.
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>Checkstyle.Classpath</term>
+							<listitem>
+								<para>
+									Path to the checkstyle-all.jar
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>Checkstyle.ConfigFile</term>
+							<listitem>
+								<para>
+									Path to the checkstyle configuration file.
+								</para>
+							</listitem>
+						</varlistentry>
+						
+						<varlistentry>
+							<term>Checkstyle.CheckFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*\.java")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>Checkstyle.IgnoreFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+				</para>
+			</sect2>
+			<sect2>
+				<title>Keywords</title>
+				<para>
+					This check tests if a specified list of keywords is
+					set for a specified set of files. The configuration
+					options are:
+
+					<variablelist>
+						<varlistentry>
+							<term>Keywords.Keywords</term>
+							<listitem>
+								<para>
+									Keywords which should be checked.
+								</para>
+							</listitem>
+						</varlistentry>
+						
+						<varlistentry>
+							<term>Keywords.Keywords.CheckFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>Keywords.Keywords.IgnoreFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+				</para>
+			</sect2>
+			<sect2>
+				<title>Log</title>
+				<para>
+					Generates a log message. The configuration options
+					are:
+					
+					<variablelist>
+						<varlistentry>
+							<term>Log.ViewVcUrl</term>
+							<listitem>
+								<para>
+									Url to viewvc to include in the log
+									message. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+				</para>
+			</sect2>
+			<sect2>
+				<title>Mantis</title>
+				<para>
+					Checks if the given mantis id(s) exists, is set to
+					the status "in_progress" and is assigned to the
+					currently committing user. The Mantis ID must be
+					specified in the log message and match the pattern
+					'MANTIS([:#]|[\s\-_]ID) ([0-9]+)'. The configuration
+					options are:
+
+					<variablelist>
+						<varlistentry>
+							<term>Mantis.CheckInProgress</term>
+							<listitem>
+								<para>
+									Whether to check the "in_progress"
+									status. (Default=True)
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Mantis.CheckHandler</term>
+							<listitem>
+								<para>
+									Whether to check if the issue is
+									assigned to the currently committing
+									user. (Default=True)
+								</para>
+							</listitem>
+						</varlistentry>
+						
+						<varlistentry>
+							<term>Mantis.URL</term>
+							<listitem>
+								<para>
+									URL to the mantisconnect script.
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Mantis.User</term>
+							<listitem>
+								<para>
+									Username to login in mantis.
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Mantis.Password</term>
+							<listitem>
+								<para>
+									Password to login in mantis.
+								</para>
+							</listitem>
+						</varlistentry>
+						
+					</variablelist>
+				</para>
+			</sect2>
+			<sect2>
+				<title>Pylint</title>
+				<para>
+					This check runs pylint over a given set of
+					files. The configuration options are:
+					
+					<variablelist>
+						<varlistentry>
+							<term>Pylint.ConfigFile</term>
+							<listitem>
+								<para>
+									Path to the pylint configuration file. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+						
+						<varlistentry>
+							<term>Pylint.CheckFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*\.py")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>Pylint.IgnoreFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>	
+				</para>
+			</sect2>
+			<sect2>
+				<title>RejectTabs</title>
+				<para>
+                    In most coding standards there is a rule concerning
+                    indentation and in many cases hard tabs are prohibited.
+                    This check parses a given set of files (ignoring binary
+                    files) and rejects any file that contains leading tabs.
+                    You can use configuration variables for example to
+                    restrict the check only to files with given extension.
+					
+					<variablelist>
+						<varlistentry>
+							<term>RejectTabs.CheckFiles</term>
+							<listitem>
+								<para>
+                                    List of regular expressions that match
+                                    files that should be checked by this rule.
+                                    (Default=".*") Remember that binary files
+                                    are never checked.
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>RejectTabs.IgnoreFiles</term>
+							<listitem>
+								<para>
+                                    List of regular expressions that match
+                                    files that should not be checked by this
+                                    rule. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+				</para>
+			</sect2>
+			<sect2>
+				<title>UnitTests</title>
+				<para>
+					This check tests if a unit test exists for a given
+					java class. The java class must follow the pattern
+					/main/.../Class.java and the unit test must follow
+					the pattern /main/.../TestClass.java. Interfaces are
+					omitted. The configuration options are:
+
+					<variablelist>
+						<varlistentry>
+							<term>UnitTests.CheckFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*\.java")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>UnitTests.IgnoreFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>			
+				</para>
+			</sect2>
+			<sect2>
+				<title>XMLValidator</title>
+				<para>
+					This check checks if a file is a valid xml file.
+				
+					<variablelist>
+						<varlistentry>
+							<term>XMLValidator.CheckFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should be checked
+									by this rule. (Default=".*\.xml")
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>XMLValidator.IgnoreFiles</term>
+							<listitem>
+								<para>
+									List of regular expressions that
+									match files that should not be
+									checked by this rule. (Default="")
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+				</para>
+			</sect2>
+		</sect1>
+		<sect1>
+			<title>Handlers</title>
+			<sect2>
+				<title>Console</title>
+				<para>
+					Prints the output either to sys.stderr or
+					sys.stdout.
+				</para>
+			</sect2>
+			<sect2>
+				<title>File</title>
+				<para>
+					Print the output to a given file. Configuration
+					options are:
+					
+					<variablelist>
+						<varlistentry>
+							<term>%Check%.SuccessFile</term>
+							<listitem>
+								<para>
+									Path to the file to print the output
+									in the case of success.
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>%Check%.FailureFile</term>
+							<listitem>
+								<para>
+									Path to the file to print the output
+									in the case of failure.
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>		
+				</para>
+			</sect2>
+			<sect2>
+				<title>Mail</title>
+				<para>
+					Mails the output to the given addresses. The configuration options are:
+					
+					<variablelist>
+						<varlistentry>
+							<term>%Check%.SuccessAddresses</term>
+							<listitem>
+								<para>
+									Mail addresses to send the output in
+									the case of success.
+								</para>
+							</listitem>
+						</varlistentry>
+
+						<varlistentry>
+							<term>%Check%.FailureAddresses</term>
+							<listitem>
+								<para>
+									Mail addresses to send the output in
+									the case of failure.
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>						
+				
+				</para>
+			</sect2>
+			<sect2>
+				<title>Mantis</title>
+				<para>
+					Appends the message as bug note to the given mantis
+					id(s). The Mantis ID must be specified in the
+					logmessage and match the pattern
+					'MANTIS([:#]|[\s\-_]ID) ([0-9]+)'. Available
+					configuration options are:
+
+					<variablelist>
+						<varlistentry>
+							<term>Mantis.URL</term>
+							<listitem>
+								<para>
+									URL to the mantisconnect script.
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Mantis.User</term>
+							<listitem>
+								<para>
+									Username to login in mantis.
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Mantis.Password</term>
+							<listitem>
+								<para>
+									Password to login in mantis.
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+				</para>
+			</sect2>
+		</sect1>
+	</chapter>
+
+	<chapter>
+		<title>Developers Guide</title>
+		<para>
+			Developing Checks and Handlers to extend the SVNChecker is a very easy
+			process. Each of them must only implement one method which
+			does the actual work. As helper classes the current
+			Transaction and Configuration is provided to them.
+		</para>
+		<sect1>
+			<title>The Transaction class</title>
+			<para>
+				The Transaction class gives you all information you need
+				to know about the commit and the repository. It has the
+				following methods:
+
+				<variablelist>
+					<varlistentry>
+						<term>getUserID()</term>
+						<listitem>
+							<para>
+								Returns a string with the username of
+								the current transaction.
+							</para>
+						</listitem>
+
+					</varlistentry>
+					<varlistentry>
+						<term>getFiles(checkList, ignoreList)</term>
+						<listitem>
+							<para>
+								Returns a map of all modified files. The
+								keys of the map are the filenames. The
+								value of each key of the map is the associated
+								attribute, which can be one of the
+								default
+								<ulink
+									url="http://svnbook.red-bean.com/en/1.4/svn-book.html#svn.ref.svnlook.c.changed">
+									svnlook changed
+								</ulink>
+								attributes.
+							</para>
+							<para>
+								CheckList must be a list of regular
+								expressions for files which should be
+								included, it defaults to [".*"].
+							</para>
+							<para>
+								IgnoreList must be a list of regular
+								expressions for files which should be
+								ignored, it defaults to [].
+							</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>getFile(filename)</term>
+						<listitem>
+							<para>
+								Returns the path to a temporary copy of
+								a file in the repository.
+							</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>
+							fileExists(filename, ignoreCase=False)
+						</term>
+						<listitem>
+							<para>
+								Returns whether a file exists in the
+								current transaction or revision of the
+								repository, optionally case-insensitive.
+							</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>getCommitMsg()</term>
+						<listitem>
+							<para>Returns the commit message.</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>getRevision()</term>
+						<listitem>
+							<para>
+								Return the id of the revision or
+								transaction.
+							</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>getProperty(keyword, filename)</term>
+						<listitem>
+							<para>
+								Returns a specified property of a file.
+							</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>hasProperty(keyword, filename)</term>
+						<listitem>
+							<para>
+								Checks if a given file has the given
+								property.
+							</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>listProperties(filename)</term>
+						<listitem>
+							<para>
+								Returns a list of names of the
+								properties for a file.
+							</para>
+						</listitem>
+					</varlistentry>
+				</variablelist>
+			</para>
+		</sect1>
+
+		<sect1>
+			<title>The Config class</title>
+			<para>
+				The Configuration class provides you with all required
+				methods to access configuration variables:
+
+				<variablelist>
+					<varlistentry>
+						<term>getString(var, default=None)</term>
+						<listitem>
+							<para>
+								Returns a variable as string. If the
+								variable does not exist and default is
+								set default will be returned, otherwise
+								a NoSuchConfigurationValueError will be
+								raised.
+							</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>getArray(var, default=None)</term>
+						<listitem>
+							<para>
+								Returns a variable as array. The
+								configuration string is split by the ','
+								character. If the variable does not
+								exist and default is set default will be
+								returned, otherwise a
+								NoSuchConfigurationValueError will be
+								raised.
+							</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>getBoolean(var, default=None)</term>
+						<listitem>
+							<para>
+								Returns a variable as boolean. True,
+								true, 1 will return True. False, false,
+								0 will return False. If the variable
+								does not match the pattern a ValueError
+								will be raised. If the variable does not
+								exist and default is set default will be
+								returned, otherwise a
+								NoSuchConfigurationValueError will be
+								raised.
+							</para>
+						</listitem>
+					</varlistentry>
+
+					<varlistentry>
+						<term>getInteger(var, default=None)</term>
+						<listitem>
+							<para>
+								Returns a variable as integer. If the
+								variable cannot be converted to an
+								integer a ValueError will be raised. If
+								the variable does not exist and default
+								is set default will be returned,
+								otherwise a
+								NoSuchConfigurationValueError will be
+								raised.
+							</para>
+						</listitem>
+					</varlistentry>
+				</variablelist>
+			</para>
+		</sect1>
+
+		<sect1>
+			<title>Implementing a Check</title>
+			<para>
+				To implement a new Check you only need to write a python
+				module containing a method named "run", with two
+				parameters, "transaction" and "config". The return value
+				must be a tuple containing the return message and the
+				exit code. You have to put the check into the "checks"
+				package of the SVNChecker. Here an example of a simple
+				check, testing if a xml file is parseable:
+
+				<programlisting><![CDATA[
+from xml.dom import minidom
+from xml.parsers import expat
+
+def run(transaction, config):
+
+    check = config.getArray("XMLValidator.CheckFiles", [".*\.xml"])
+    ignore = config.getArray("XMLValidator.IgnoreFiles", [])
+    files = transaction.getFiles(check, ignore)
+
+    msg= ""
+    for filename, attribute in files.iteritems():
+        if attribute in ["A", "U"]:
+            try:
+                minidom.parse(transaction.getFile(filename))
+            except expat.ExpatError, e:
+                msg += "XML Validation error in file %r: %s" % (filename, e)
+
+    if msg:
+        return (msg, 1)
+    else:
+        return ("", 0)
+				]]></programlisting>
+			</para>
+		</sect1>
+		
+		<sect1>
+			<title>Implementing a Handler</title>
+			<para>
+				To implement a new Handler you only need to write a
+				python module containing a method named "run", with
+				five parameters, "transaction", "config", "check", "msg"
+				and "exitCode". "check" is the name of the just executed
+				check. Here an example of a simple handler, printing the
+				output to the console:
+
+				<programlisting><![CDATA[
+import sys
+
+separator = "\n" + "=" * 80 + "\n"
+
+def run(transaction, config, check, msg, exitCode):
+
+    if (exitCode == 1):
+        out = sys.stderr
+    else:
+        out = sys.stdout
+
+    out.write(separator)
+    out.write(msg)
+    out.write(separator)
+				]]></programlisting>
+			</para>
+		</sect1>
+	</chapter>
+	<chapter>
+		<title>Changelog</title>
+		<sect1>
+			<title>Version 0.3</title>
+			<para>
+				<itemizedlist mark='bullet'>
+					<listitem>
+						<para>
+							Added RejectTabs test, thanks to Adam Byrtek for the contribution.
+						</para>
+					</listitem>
+				</itemizedlist>
+			</para>
+		</sect1>
+		<sect1>
+			<title>Version 0.2.1</title>
+			<para>
+				<itemizedlist mark='bullet'>
+					<listitem>
+						<para>
+							Fixed a bug in the pylint check that made the check pass although it failed.
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Made the "Pylint.ConfigFile" configuration option optional, a default pylintrc will be used if you don't specify it.
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Fixed a bug in the transaction module that returned an empty file when calling getFile(...) more than once on the same file.
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Fixed a bug in the transaction module to avoid a deadlock when receiving big files.
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Made the SVNChecker compatible with python 2.4.
+						</para>
+					</listitem>
+				</itemizedlist>
+			</para>
+		</sect1>
+		<sect1>
+			<title>Version 0.2</title>
+			<para>
+				This is the first big revision of the SVNChecker. The
+				interfaces to implement a Check or Handler were changed.
+				Furthermore the Transaction and Config classes have been
+				improved. If you develop your own modules take a look at
+				the updated "Developers Guide". A lot of checks have
+				been enhanced, e.g. Checkstyle and Pylint are faster
+				now, and new Checks were added, including Checkout and
+				CaseInsensitiveFilenameClash. For a complete reference
+				of the available Checks and Handlers and their
+				configuration options take a look at the "Available
+				Modules" section. The configuration now supports a
+				system-wide file which can define configuration options
+				which are fixed for all installed repositories. If you
+				want to use the hooks directory in the configuration
+				file you can now use %HOOKS%, which will automatically
+				be replaced by the real directory. With the help of a
+				new test-environment all modules have undergone a better
+				testing for improved stability. A complete list of fixed
+				issues is available via the issue tracker at the tigris
+				project page.
+			</para>
+		</sect1>
+	</chapter>
+</book>

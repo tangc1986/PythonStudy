@@ -1,0 +1,18 @@
+Here some notes if you want to start developing on this project:
+
+Development Environment
+========================
+
+This project is developed with eclipse + pydev.
+Coding style guidelines are described in pylintrc.
+Write unit tests with py.test.
+
+Documentation
+=============
+
+The documentation is written in docbook.
+
+Releases
+========
+
+python setup.py sdist
